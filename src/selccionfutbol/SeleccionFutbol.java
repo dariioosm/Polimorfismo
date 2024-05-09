@@ -1,6 +1,6 @@
 package selccionfutbol;
 
-public abstract class SeleciconFutbol {
+public abstract class SeleccionFutbol {
     protected String nombre,apellidos;
     protected int id,edad;
     
@@ -38,7 +38,7 @@ public abstract class SeleciconFutbol {
 
 
 
-    public SeleciconFutbol(String nombre, String apellidos, int id, int edad) {
+    public void SeleccionFutbol(int id,String nombre, String apellidos, int edad) {
        super();
         this.nombre = nombre;
         this.apellidos = apellidos;

@@ -12,7 +12,7 @@ public class Entrenador extends SeleciconFutbol {
     }
 
     public Entrenador(String nombre, String apellidos, int id, int edad, int idFederacion) {
-        super(nombre, apellidos, id, edad);
+        super(id, apellidos, nombre, edad);
         this.idFederacion = idFederacion;
     }
 

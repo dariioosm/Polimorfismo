@@ -20,8 +20,8 @@ public class Masajista extends SeleciconFutbol {
     
 
     
-    public Masajista(String nombre, String apellidos, int id, int edad,String titulacion, int experiencia) {
-        super(nombre,apellidos,id,edad);
+    public Masajista(int id,String nombre, String apellidos, int edad,String titulacion, int experiencia) {
+        super(id,apellidos,nombre,edad);
         this.titulacion = titulacion;
         this.experiencia = experiencia;
     }

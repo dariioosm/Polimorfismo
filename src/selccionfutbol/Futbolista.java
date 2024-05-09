@@ -21,8 +21,8 @@ public class Futbolista extends SeleciconFutbol    {
     
 
 
-    public Futbolista(String nombre, String apellidos, int id, int edad, int dorsal, String demarcacion) {
-        super(nombre, apellidos, id, edad);
+    public Futbolista( int id,String nombre, String apellidos, int edad, int dorsal, String demarcacion) {
+        super(id, apellidos, nombre, edad);
         this.dorsal = dorsal;
         this.demarcacion = demarcacion;
     }

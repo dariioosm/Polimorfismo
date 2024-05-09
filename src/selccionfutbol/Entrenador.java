@@ -11,6 +11,11 @@ public class Entrenador extends SeleciconFutbol {
         this.idFederacion = idFederacion;
     }
 
+    public Entrenador(String nombre, String apellidos, int id, int edad, int idFederacion) {
+        super(nombre, apellidos, id, edad);
+        this.idFederacion = idFederacion;
+    }
+
     @Override
     public void entrenamiento(){
         System.out.println("Dirige entrenamiento clase entrenador");
@@ -20,7 +25,7 @@ public class Entrenador extends SeleciconFutbol {
     public void partidoFutbol(){
         System.out.println("Dirige un partido clase entrenador");
     }
-    @Override
+    
     public void planificaEntreno(){
         System.out.println("Planifica un entrenamiento");
     }

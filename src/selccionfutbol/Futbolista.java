@@ -18,11 +18,14 @@ public class Futbolista extends SeleciconFutbol    {
         this.demarcacion = demarcacion;
     }
 
-    public Futbolista(){
-        
+    
+
+
+    public Futbolista(String nombre, String apellidos, int id, int edad, int dorsal, String demarcacion) {
+        super(nombre, apellidos, id, edad);
+        this.dorsal = dorsal;
+        this.demarcacion = demarcacion;
     }
-
-
     @Override
     public void entrenamiento(){
         System.out.println("Realiza un entrenamiento clase futbolista");
@@ -32,8 +35,8 @@ public class Futbolista extends SeleciconFutbol    {
         System.out.println("Juega partido de futbol clase futbolista");
     }
     
-    @Override
+    
     public void entrevista(){
-        System.out.println("Da una entrevista");
+        System.out.println("Jugador da una entrevista");
     }   
 }

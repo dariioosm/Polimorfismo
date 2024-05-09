@@ -1,6 +1,6 @@
 package selccionfutbol;
 
-public class Entrenador extends SeleciconFutbol {
+public class Entrenador extends SeleccionFutbol {
     private int idFederacion;
 
     public int getIdFederacion() {

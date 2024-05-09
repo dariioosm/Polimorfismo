@@ -1,6 +1,6 @@
 package selccionfutbol;
 
-public class Masajista extends SeleciconFutbol {
+public class Masajista extends SeleccionFutbol {
     private String titulacion;
     private int experiencia;
 
@@ -25,7 +25,7 @@ public class Masajista extends SeleciconFutbol {
         this.titulacion = titulacion;
         this.experiencia = experiencia;
     }
-    @Override
+    
     public void entrenamiento(){
         System.out.println("Asiste al entreno clase masajista");
     }

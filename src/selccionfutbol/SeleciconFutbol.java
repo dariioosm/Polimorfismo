@@ -4,6 +4,47 @@ public abstract class SeleciconFutbol {
     protected String nombre,apellidos;
     protected int id,edad;
     
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+
+
+    public SeleciconFutbol(String nombre, String apellidos, int id, int edad) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.id = id;
+        this.edad = edad;
+    }
+
     public void viajar(){
         System.out.println("Viajar clase padre");
     }

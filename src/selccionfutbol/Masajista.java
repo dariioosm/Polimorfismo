@@ -17,7 +17,13 @@ public class Masajista {
         this.experiencia = experiencia;
     }
 
+    
 
+    public Masajista( String nombre, String apellidos, int id, int edad,String titulacion, int experiencia) {
+        super(nombre,apellidos,id,edad);
+        this.titulacion = titulacion;
+        this.experiencia = experiencia;
+    }
     @Override
     public void entrenamiento(){
         System.out.println("Asiste al entreno clase masajista");

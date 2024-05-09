@@ -38,7 +38,7 @@ public abstract class SeleccionFutbol {
 
 
 
-    public void SeleccionFutbol(int id,String nombre, String apellidos, int edad) {
+    public  SeleccionFutbol(int id,String nombre, String apellidos, int edad) {
        super();
         this.nombre = nombre;
         this.apellidos = apellidos;

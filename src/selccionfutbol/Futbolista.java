@@ -17,6 +17,12 @@ public class Futbolista extends SeleciconFutbol    {
     public void setDemarcacion(String demarcacion) {
         this.demarcacion = demarcacion;
     }
+
+    public Futbolista(){
+        
+    }
+
+
     @Override
     public void entrenamiento(){
         System.out.println("Realiza un entrenamiento clase futbolista");

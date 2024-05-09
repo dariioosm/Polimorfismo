@@ -39,7 +39,9 @@ public abstract class Profesor {
         this.IdProfesor = idProfesor;
     }
 
-    public void importeNomina(){}
+    public  void importeNomina(){
+        
+    }
 
 
 }

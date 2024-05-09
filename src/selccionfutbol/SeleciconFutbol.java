@@ -39,6 +39,7 @@ public abstract class SeleciconFutbol {
 
 
     public SeleciconFutbol(String nombre, String apellidos, int id, int edad) {
+       super();
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.id = id;

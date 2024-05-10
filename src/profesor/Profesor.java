@@ -1,11 +1,13 @@
 package profesor;
 
 public abstract class Profesor {
-    private String nombre;
-    private String apellidos;
-    private int edad;
-    private String IdProfesor;
-    
+    protected String nombre;
+    protected String apellidos;
+    protected int edad;
+    protected String IdProfesor;
+    protected double sueldo;
+
+
     public String getNombre() {
         return nombre;
     }
@@ -31,17 +33,23 @@ public abstract class Profesor {
         IdProfesor = idProfesor;
     }
 
-    public Profesor(String nombre, String apellidos, int edad, String idProfesor) {
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public Profesor(String nombre, String apellidos, int edad, String idProfesor,double sueldo) {
         super();
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
         this.IdProfesor = idProfesor;
+        this.sueldo=sueldo;
     }
 
-    public  void importeNomina(){
-        
-    }
-
+    public abstract void importeNomina();
 
 }

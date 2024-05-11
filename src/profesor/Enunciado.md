@@ -5,7 +5,7 @@ Ejercicio Profesor (Polimorfismo)
     private String apellidos;✅✅✅
     private int edad;✅✅✅
     private String IdProfesor;✅✅✅
-▪ Declara un método abstracto: importeNomina().
+▪ Declara un método abstracto: importeNomina().✅✅✅
 
 ▪ Crea dos clases concretas que hereden de Profesor: la clase ProfesorTitular y la clase
 ProfesorInterino que sobreescriban los métodos abstractos necesarios. Calculo nomina:

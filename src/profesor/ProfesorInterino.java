@@ -10,6 +10,8 @@ public class ProfesorInterino extends Profesor {
     @Override
     public void importeNomina() {
         double mensualidad = 30 * 35.60;
-        System.out.println("El sueldo de sin trienios ni extras es: " + mensualidad);
+        double total = mensualidad + 600;
+        System.out.println("El sueldo del profesor interino sin extras es: " + mensualidad + "\n"
+                + "El sueldo del interino incuyendo extras es: " + total);
     }
 }

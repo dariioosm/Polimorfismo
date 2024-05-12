@@ -1,4 +1,5 @@
 package profesor;
-public class Nomina{
-    
+
+public class Nomina {
+
 }

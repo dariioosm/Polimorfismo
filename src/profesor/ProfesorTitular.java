@@ -26,7 +26,9 @@ public class ProfesorTitular extends Profesor {
         this.trienio=trienio;
 
     }
-
+    public void importeTotal(){
+        
+    }
 
     @Override
     public void importeNomina() {

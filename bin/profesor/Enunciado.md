@@ -6,8 +6,8 @@
 
 Crea dos clases que hereden de Profesor:
      Clase ProfesorTitular:
-     Complemento de destino (numérico real): 500 euros.
-     Antigüedad en trienios (numérico entero).
+     Complemento de destino (numérico real): 500 euros.✅✅✅
+     Antigüedad en trienios (numérico entero).✅✅✅
         o 1 trienio 1.01 del salario
         o 2 trienios 1.02
         o 3 trienios 1.05

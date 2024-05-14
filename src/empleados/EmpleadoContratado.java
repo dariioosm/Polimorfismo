@@ -1,5 +1,5 @@
 package empleados;
 
-public class EmpleadoContratado {
+public class EmpleadoContratado extends Empleado {
     
 }

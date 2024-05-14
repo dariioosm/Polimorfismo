@@ -3,11 +3,6 @@ package empleados;
 public class EmpleadoContratado extends Empleado {
     private float salarioC;
    
-    
-   
-   
-   
-    
     public EmpleadoContratado(String dni, String nombre, String apellidos, int fechaIngreso, float salarioC) {
         super(dni, nombre, apellidos, fechaIngreso);
         this.salarioC = salarioC;

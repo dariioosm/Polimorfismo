@@ -1,12 +1,12 @@
                                         EMPLEADOS
 
-▪ Declara una clase abstracta EMPLEADO con los atributos:
+▪ Declara una clase abstracta EMPLEADO con los atributos: ✅✅✅
     private String dni;
     private String nombre;
     private String apellidos;
     protected LocalDate fechaIngreso;
 
-▪ Declara un método abstracto: float getSalario.
+▪ Declara un método abstracto: float getSalario. ✅✅✅
 
 ▪ Crea dos clases concretas que hereden de Empleado: la clase EContratado (salario) y
     la clase EDestajo ( salarioD=130.05; nº de clientes).

@@ -19,7 +19,7 @@ Crea dos clases que hereden de Profesor:
 Crea una lista de profesores (ArrayList).
 
 Codifica la clase Test donde creamos profesores interinos y profesores titulares y los vamos
-añadiendo a la lista.
+añadiendo a la lista.✅✅✅
 
     ProfesorInterino pi1 = new ProfesorInterino("José", "Hernández López","45221887-K",1789);
     ProfesorInterino pi2 = new ProfesorInterino("Andrés", "Moltó Parra", "72332634-L",1200);

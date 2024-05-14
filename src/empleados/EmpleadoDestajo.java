@@ -14,14 +14,11 @@ public class EmpleadoDestajo extends Empleado{
         this.clientesCaptados=clientesCaptados;
     }
 
-
-
-
-    
-
     @Override
     public float getSalario() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getSalario'");
-    }
+        float total;
+        total= clientesCaptados*salarioD; 
+        System.out.println("El resultado final es: "+total);
+        return total;
+            }
 }

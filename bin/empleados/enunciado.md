@@ -9,7 +9,7 @@
 ▪ Declara un método abstracto: float getSalario. ✅✅✅
 
 ▪ Crea dos clases concretas que hereden de Empleado: la clase EContratado (salario) y
-    la clase EDestajo ( salarioD=130.05; nº de clientes).
+    la clase EDestajo ( salarioD=130.05; nº de clientes). ✅✅✅
 
 ▪ Crea una lista de empleados (ArrayList).
 

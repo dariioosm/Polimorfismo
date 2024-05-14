@@ -45,8 +45,8 @@ public class ProfesorTitular extends Profesor {
                 total = (super.getSueldo() * prima[i]) + super.getSueldo();
             }
         }
-        System.out.println("El sueldo sin trienios es: " + mensualidad + "\n" + "Sueldo con trienio incluido: " + total
-                + "\n" + "Sueldo con todos los extras: " + todo);
+      // System.out.println("El sueldo sin trienios es: " + mensualidad + "\n" + "Sueldo con trienio incluido: " + total
+        //        + "\n" + "Sueldo con todos los extras: " + todo);
 
     }
 }

@@ -1,6 +1,7 @@
 package profesor;
 import java.io.*;
 public class Nomina implements Serializable {
+    
     /*
      * Grabar en un fichero el IdProfesor y su nómina, para lo cual se debe crear un
      * ArrayList de la
@@ -21,6 +22,11 @@ public class Nomina implements Serializable {
     public String toString(){
         return  super.toString();
     }
-    
+    /*
+     *  crear metodo para grabar las nominas en un fichero
+     */
+    public void grabarListin(){
+        
+    }
 
 }

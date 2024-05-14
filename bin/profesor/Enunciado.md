@@ -37,3 +37,9 @@ clase nómina.
 
 Por ultimo el método importeTotalNominaProfesorado() leerá el archivo grabado y calcula la
 suma de todas las nóminas.
+
+*********************************************************************************************************
+
+CREAR METODO QUE HAGA LA SUMA TOTAL DE LOS PROFESORES INTERINOS O TITULARES  USANDO EL ARRAYLIST DE CADA TIPO
+
+*********************************************************************************************************

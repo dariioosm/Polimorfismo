@@ -33,22 +33,22 @@ public class Serie  implements Entregable{
     }
 
     public boolean isEntregado() {
-        return entregado;
+        return isEntregado;
     }
     public void setEntregado(boolean entregado) {
-        this.entregado = entregado;
+        this.isEntregado = entregado;
     }
 
     public Serie(){
 
     }
     
-    public Serie(String titulo, int temporadas, String genero, String creador, booelan entregado) {
+    public Serie(String titulo, int temporadas, String genero, String creador, boolean isEntregado) {
         this.titulo = titulo;
         this.temporadas = 3;
         this.genero = genero;
         this.creador = creador;
-        this.entregado=false;
+        this.isEntregado=false;
     }
 
     public Serie(String titulo,int temporadas, String genero, String creador){

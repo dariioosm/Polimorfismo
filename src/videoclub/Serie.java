@@ -1,6 +1,6 @@
 package videoclub;
 
-public class Serie {
+public class Serie  implements Entregable{
     private String titulo;
     private int temporadas;
     private String genero;

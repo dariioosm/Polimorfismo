@@ -32,12 +32,7 @@ public class Serie  implements Entregable{
         this.creador = creador;
     }
 
-    public boolean isEntregado() {
-        return isEntregado;
-    }
-    public void setEntregado(boolean entregado) {
-        this.isEntregado = entregado;
-    }
+    
 
     public Serie(){
 

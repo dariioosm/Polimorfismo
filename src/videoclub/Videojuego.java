@@ -1,6 +1,6 @@
 package videoclub;
 
-public class Videojuego {
+public class Videojuego implements Entregable{
     private String titulo;
     private int horasEstimadas;
     private boolean entregado;
@@ -27,6 +27,15 @@ public class Videojuego {
         this.titulo=titulo;
         this.horasEstimadas=10;
         
+    }
+    @Override
+    public void entregar() {
+    }
+    @Override
+    public void devolver() {
+    }
+    @Override
+    public boolean isEntregado() {
     }
 
     

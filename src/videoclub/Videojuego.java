@@ -24,10 +24,18 @@ public class Videojuego implements Entregable{
     }
 
     public Videojuego(String titulo, int horasEstimadas){
+        super();
         this.titulo=titulo;
         this.horasEstimadas=10;
         
     }
+    
+    @Override
+    public String toString() {
+        return "Videojuego [titulo=" + titulo + ", horasEstimadas=" + horasEstimadas + ", entregado=" + entregado + "]";
+    }
+
+
     @Override
     public void entregar() {
     }

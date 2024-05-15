@@ -47,11 +47,18 @@ public class Serie  implements Entregable{
     }
 
     public Serie(String titulo,int temporadas, String genero, String creador){
+        super();
         this.titulo=titulo;
         this.temporadas= temporadas;
         this.genero=genero;
         this.creador=creador;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Serie [titulo=" + titulo + ", temporadas=" + temporadas + ", genero=" + genero + ", creador=" + creador
+                + ", isEntregado=" + isEntregado + "]";
     }
     @Override
     public void entregar() {

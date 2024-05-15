@@ -5,7 +5,7 @@ public class Serie  implements Entregable{
     private int temporadas;
     private String genero;
     private String creador;
-    private boolean entregado;
+    private boolean isEntregado;
     
     public String getTitulo() {
         return titulo;
@@ -58,5 +58,11 @@ public class Serie  implements Entregable{
         this.creador=creador;
 
     }
+    @Override
+    public void entregar() {
+        }
+    @Override
+    public void devolver() {
+        }
     
 }

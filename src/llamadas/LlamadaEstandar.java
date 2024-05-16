@@ -34,6 +34,11 @@ public class LlamadaEstandar extends Llamada {
         this.prima=prima;
     }
 
+    public LlamadaEstandar(String origen, String destino, int duracion) {
+        super(origen, destino, duracion);
+    }
+
+
     @Override
     public double calcularCoste() {
         double estandar= (prima*duracion)+establecimiento;

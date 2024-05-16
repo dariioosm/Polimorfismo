@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class LlamadaList {
     ArrayList <Llamada> listin= new ArrayList<Llamada>();
-    LlamadaHoraria llamaH = new LlamadaHoraria();
-    LlamadaEstandar llamaE = new LlamadaEstandar();
+
     public void cargarLlamadas(){
 
         listin.add( new LlamadaEstandar("98 5112233","98 5332211",10));

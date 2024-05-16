@@ -15,5 +15,10 @@ public class LlamadaList {
         listin.add(new LlamadaHoraria("98 5112233","91 5555555",33,"R11"));
 
     }
+    public void verListin(){
+        for (Llamada llamadas : listin) {
+            System.out.println(listin);
+        }
+    }
     
 }

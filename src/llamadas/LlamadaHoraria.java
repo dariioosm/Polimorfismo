@@ -10,7 +10,19 @@ public class LlamadaHoraria extends Llamada {
 
 
     public void setFranja(String franja) {
-        super();
+        this.franja = franja;
+    }
+
+
+
+    public LlamadaHoraria(String franja) {
+        this.franja = franja;
+    }
+
+
+
+    public LlamadaHoraria(String origen, String desetino, int duracion, String franja) {
+        super(origen, desetino, duracion);
         this.franja = franja;
     }
 

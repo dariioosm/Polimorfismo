@@ -1,14 +1,19 @@
 package llamadas;
 
-public class LlamadaList extends Llamada{
+import java.util.ArrayList;
 
+public class LlamadaList {
+    ArrayList <Llamada> listin= new ArrayList<Llamada>();
+    LlamadaHoraria llamaH = new LlamadaHoraria();
+    LlamadaEstandar llamaE = new LlamadaEstandar();
     public void cargarLlamadas(){
-        LlamadaEstandar("98 5112233","98 5332211",10)
-        LlamadaEstandar("98 5112233","98 1234567",15)
-        LlamadaHoraria("98 5112233","91 3333333",5,Y22)
-        LlamadaHoraria("98 5112233","91 5555555",13,C44)
-        LlamadaHoraria("98 5112233","91 5555555",2,A11)
-        LlamadaHoraria("98 5112233","91 5555555",33,R11)
+
+        listin.add( new LlamadaEstandar("98 5112233","98 5332211",10));
+        listin.add(new LlamadaEstandar("98 5112233","98 1234567",15));
+        listin.add(new LlamadaHoraria("98 5112233","91 3333333",5,"Y22"));
+        listin.add(new LlamadaHoraria("98 5112233","91 5555555",13,"C44"));
+        listin.add(new LlamadaHoraria("98 5112233","91 5555555",2,"A11"));
+        listin.add(new LlamadaHoraria("98 5112233","91 5555555",33,"R11"));
 
     }
     

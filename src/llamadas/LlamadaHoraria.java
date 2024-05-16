@@ -2,6 +2,17 @@ package llamadas;
 
 public class LlamadaHoraria extends Llamada {
     private String franja;
+    
+    public String getFranja() {
+        return franja;
+    }
+
+
+
+    public void setFranja(String franja) {
+        super();
+        this.franja = franja;
+    }
 
 
 
@@ -39,6 +50,8 @@ public class LlamadaHoraria extends Llamada {
             System.out.println("El precio medio de la tarifa "+tipo[fila]+" es: "+total);
             return total;
         }
+
+
 
     }
 

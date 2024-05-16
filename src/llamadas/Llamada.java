@@ -40,5 +40,5 @@ public abstract class Llamada {
         this.duracion = duracion;
     }
 
-    public abstract int calcularCoste();
+    public abstract double calcularCoste();
 }

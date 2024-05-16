@@ -28,7 +28,7 @@ public class LlamadaHoraria extends Llamada {
             }
         }
             /*bucle para recorrer la fila de la tarifa y conseguir el total */
-        for(int j=0; j<tarifas[fila].length;j++){
+        for(int j=0; j<tarifas[0].length;j++){
                 
                 suma =suma+tarifas[fila][j];    
             

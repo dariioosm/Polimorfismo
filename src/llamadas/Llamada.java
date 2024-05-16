@@ -2,7 +2,7 @@ package llamadas;
 
 public abstract class Llamada {
     protected String origen;
-    protected String desetino;
+    protected String destino;
     protected int duracion;
 
     public String getOrigen() {
@@ -13,12 +13,12 @@ public abstract class Llamada {
         this.origen = origen;
     }
 
-    public String getDesetino() {
-        return desetino;
+    public String getDestino() {
+        return destino;
     }
 
-    public void setDesetino(String desetino) {
-        this.desetino = desetino;
+    public void setDestino(String desetino) {
+        this.destino = desetino;
     }
 
     public int getDuracion() {
@@ -33,9 +33,9 @@ public abstract class Llamada {
         super();
     }
 
-    public Llamada(String origen, String desetino, int duracion) {
+    public Llamada(String origen, String destino, int duracion) {
         this.origen = origen;
-        this.desetino = desetino;
+        this.destino = destino;
         this.duracion = duracion;
     }
 

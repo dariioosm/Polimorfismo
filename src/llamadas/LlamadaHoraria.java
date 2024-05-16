@@ -15,8 +15,8 @@ public class LlamadaHoraria extends Llamada {
         this.franja = franja;
     }
 
-    public LlamadaHoraria(String origen, String desetino, int duracion, String franja) {
-        super(origen, desetino, duracion);
+    public LlamadaHoraria(String origen, String destino, int duracion, String franja) {
+        super(origen, destino, duracion);
         this.franja = franja;
     }
 
@@ -30,7 +30,7 @@ public class LlamadaHoraria extends Llamada {
                 { 1.22, 1.90, 1.88 },
                 { 2.21, 2.25, 2.89 } };
         String[] tipo = { "A11", "B11", "C44", "R11", "Y22" };
-        
+
         /* bucle para llegar a la altura de la tarifa */
 
         for (int i = 0; i < tarifas.length; i++) {

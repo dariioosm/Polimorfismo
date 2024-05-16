@@ -24,13 +24,13 @@ public class LlamadaList extends Llamada {
     }
 
     /*
-      ! mirar el metodo borrar
+     * ! mirar el metodo borrar
      */
     public void borrarLlamada() {
         Iterator<Llamada> iterador = listin.iterator();
         while (iterador.hasNext()) {
             Llamada llamada = iterador.next();
-            if (llamada.getDesetino().equals(desetino)) {
+            if (llamada.getDestino().equals(destino)) {
                 iterador.remove();
                 System.out.println("Llamada eliminada: " + llamada);
             }

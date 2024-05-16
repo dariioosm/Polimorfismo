@@ -20,13 +20,14 @@ public class LlamadaHoraria extends Llamada {
          * 
          * se supone que tiene que recorrer la fila 
          */
+        /* bucle para llegar a la altura de la tarifa */
         
          for(int i= 0; i< tarifas.length;i++){
             if(franja.equals(tipo[i])){
                  fila =i;
             }
         }
-            
+            /*bucle para recorrer la fila de la tarifa y conseguir el total */
         for(int j=0; j<tarifas[fila].length;j++){
                 
                 suma =suma+tarifas[fila][j];    

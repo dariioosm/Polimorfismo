@@ -3,7 +3,7 @@ package llamadas;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class LlamadaList {
+public class LlamadaList extends Llamada {
     ArrayList <Llamada> listin= new ArrayList<Llamada>();
 
     public void cargarLlamadas(){
@@ -21,16 +21,21 @@ public class LlamadaList {
             System.out.println(llamadas);
         }
     }
-
+    /*
+     * ! mirar el metodo borrar
+     */
     public void borrarLlamada(){
         Iterator<Llamada> iterador = listin.iterator();
         while (iterador.hasNext()) {
             Llamada llamada = iterador.next();
-            if (llamada.equals(llamada)) {
+            if (llamada.equals(getDesetino())) {
                 iterador.remove();
                 System.out.println("Llamada eliminada: " + llamada);
             }
         }
     }
+    
+
+
     
 }

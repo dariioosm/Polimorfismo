@@ -17,7 +17,7 @@ public class LlamadaList {
     }
     public void verListin(){
         for (Llamada llamadas : listin) {
-            System.out.println(listin);
+            System.out.println(llamadas);
         }
     }
     

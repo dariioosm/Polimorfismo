@@ -29,10 +29,9 @@ public abstract class Llamada {
         this.duracion = duracion;
     }
 
-    public Llamada(){
+    public Llamada() {
         super();
     }
-
 
     public Llamada(String origen, String desetino, int duracion) {
         this.origen = origen;

@@ -28,7 +28,11 @@ public class LlamadaEstandar extends Llamada {
         super();
     }
 
-
+    public LlamadaEstandar(double establecimiento,double prima){
+        super();
+        this.establecimiento=establecimiento;
+        this.prima=prima;
+    }
 
     @Override
     public double calcularCoste() {

@@ -1,6 +1,7 @@
 package llamadas;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class LlamadaList {
     ArrayList <Llamada> listin= new ArrayList<Llamada>();
@@ -18,6 +19,17 @@ public class LlamadaList {
     public void verListin(){
         for (Llamada llamadas : listin) {
             System.out.println(llamadas);
+        }
+    }
+
+    public void borrarLlamada(){
+        Iterator<Llamada> iterador = listin.iterator();
+        while (iterador.hasNext()) {
+            Llamada llamada = iterador.next();
+            if (llamada.equals(llamada)) {
+                iterador.remove();
+                System.out.println("Llamada eliminada: " + llamada);
+            }
         }
     }
     

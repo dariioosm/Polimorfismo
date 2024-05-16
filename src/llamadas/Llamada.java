@@ -1,9 +1,9 @@
 package llamadas;
 
 public abstract class Llamada {
-    private String origen;
-    private String desetino;
-    private int duracion;
+    protected String origen;
+    protected String desetino;
+    protected int duracion;
 
     public String getOrigen() {
         return origen;
@@ -26,6 +26,17 @@ public abstract class Llamada {
     }
 
     public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public Llamada(){
+        super();
+    }
+
+
+    public Llamada(String origen, String desetino, int duracion) {
+        this.origen = origen;
+        this.desetino = desetino;
         this.duracion = duracion;
     }
 

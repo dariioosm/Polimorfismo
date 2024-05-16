@@ -1,13 +1,12 @@
 package llamadas;
 
-public class LlamadaEstandar implements Llamada {
-    
+public class LlamadaEstandar extends Llamada {
+
+    private double establecimiento=0.25;
     
     
     @Override
-    private int calcularCoste(){
-        return coste;
-    }
-
+    public int calcularCoste() {
+        }
     
 }

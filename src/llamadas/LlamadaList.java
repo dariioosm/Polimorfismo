@@ -24,17 +24,23 @@ public class LlamadaList extends Llamada {
     }
 
     /*
-     * ! mirar el metodo borrar
+      ! mirar el metodo borrar
      */
     public void borrarLlamada() {
         Iterator<Llamada> iterador = listin.iterator();
         while (iterador.hasNext()) {
             Llamada llamada = iterador.next();
-            if (llamada.equals(getDesetino())) {
+            if (llamada.getDesetino().equals(desetino)) {
                 iterador.remove();
                 System.out.println("Llamada eliminada: " + llamada);
             }
         }
+    }
+
+    @Override
+    public double calcularCoste() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularCoste'");
     }
 
 }

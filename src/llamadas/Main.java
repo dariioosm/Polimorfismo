@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         int opcion;
         Scanner in = new Scanner(System.in);
+        llamada.cargar();
         do {
             mostrarMenu();
             opcion = in.nextInt();
@@ -15,7 +16,6 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    llamada.cargar();
                     llamada.mostrar();
                     break;
                 case 2:

@@ -1,6 +1,8 @@
 package llamadas;
 
-public abstract class Llamada {
+import java.io.Serializable;
+
+public abstract class Llamada implements Serializable {
     protected String origen;
     protected String destino;
     protected int duracion;

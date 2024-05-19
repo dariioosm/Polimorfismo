@@ -36,14 +36,13 @@ public class LlamadaHoraria extends Llamada {
 
         for (int i = 0; i < tarifas.length; i++) {
             if (franja.equals(tipo[i])) {
+                /* bucle para recorrer la fila de la tarifa y conseguir el total */
+                for (int j = 0; j < tarifas[0].length; j++) {
 
+                    suma = suma + tarifas[i][j];
+                    fila = i;
+                }
             }
-        }
-        /* bucle para recorrer la fila de la tarifa y conseguir el total */
-        for (int j = 0; j < tarifas[0].length; j++) {
-
-            suma = suma + tarifas[fila][j];
-
         }
 
         double total = suma / 3;

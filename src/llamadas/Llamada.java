@@ -36,6 +36,7 @@ public abstract class Llamada implements Serializable {
     }
 
     public Llamada(String origen, String destino, int duracion) {
+        super();
         this.origen = origen;
         this.destino = destino;
         this.duracion = duracion;
@@ -43,10 +44,4 @@ public abstract class Llamada implements Serializable {
 
     public abstract double calcularCoste();
 
-    // siempre hay que poner un toString para que saque el contenido del arraylist
-    // D:
-    @Override
-    public String toString() {
-        return "Origen: " + origen + ", Destino: " + destino + ", Duración: " + duracion + " min";
-    }
 }

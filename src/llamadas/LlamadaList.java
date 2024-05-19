@@ -19,8 +19,9 @@ public class LlamadaList {
     }
 
     public void verListin() {
-        for (Llamada llamada : listin) {
-            System.out.println(llamada);
+        for (int v = 0; v < listin.size(); v++) {
+            System.out.println(listin.get(v).getOrigen() + " " + listin.get(v).getDestino() + " "
+                    + listin.get(v).getDuracion() + " " + listin.get(v).calcularCoste());
         }
     }
 
@@ -57,13 +58,14 @@ public class LlamadaList {
                 if (llamada instanceof LlamadaHoraria) {
                     LlamadaHoraria llamaH = (LlamadaHoraria) llamada;
                     System.out.println("-----Llamadas horarias-----\n");
-                    System.out.println("Numero de origen: " + llamaH.getOrigen());
-                    System.out.println("Numero de destino: " + llamaH.getDestino());
-                    System.out.println("Duracion: " + llamaH.getDuracion());
-                    System.out.println("Franja Horaria: " + llamaH.getFranja());
+                    System.out.println("Numero de origen: " + llamada.getOrigen());
+                    System.out.println("Numero de destino: " + llamada.getDestino());
+                    System.out.println("Duracion: " + llamada.getDuracion());
+                    System.out.println("Franja Horaria: " + LlamadaHoraria.getFranja());
                     System.out.println();
                 }
             }
+            ficheroEntrada.close();
         } catch (ClassNotFoundException ex) {
             System.out.println("Clase no encontrada");
         } catch (FileNotFoundException ex) {

@@ -22,7 +22,7 @@ public class LlamadaList {
 
     public void verListin() {
         for (Llamada llamadas : listin) {
-            System.out.println();
+            System.out.println(llamadas);
         }
     }
 
@@ -34,7 +34,7 @@ public class LlamadaList {
             System.out.println("Se han guardado las llamadas en el registro");
         } catch (FileNotFoundException e) {
             System.out.println("Fichero no encontrado");
-        }catch(IOException e){
+        } catch (IOException e) {
             System.out.println("Error en la entrada o salida de datos");
         }
     }
@@ -87,7 +87,7 @@ public static void cargarListin(){
             }
         }
         if (!existe) {
-            System.out.println("No existe este numero " + borra + "como destino");
+            System.out.println("No existe este numero " + borra + " como destino");
         }
     }
 }

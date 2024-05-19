@@ -1,7 +1,7 @@
 package llamadas;
 
 public class LlamadaHoraria extends Llamada {
-    private String franja;
+    private static String franja;
 
     public static String getFranja() {
         return franja;

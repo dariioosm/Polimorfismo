@@ -13,19 +13,11 @@ public class LlamadaEstandar extends Llamada {
         super(origen, destino, duracion);
     }
 
-    public double getEstablecimiento() {
-        return establecimiento;
-    }
-
-    public double getPrima() {
-        return prima;
-    }
-
     @Override
     public double calcularCoste() {
-        double estandar = (getPrima() * getDuracion()) + getEstablecimiento();
+        double estandar = (prima * duracion) + establecimiento;
         System.out.println("El precio de esta llamada estandar con duracion " + duracion +
-                "es de " + estandar + " euros");
+                " es de " + estandar + " euros");
         return estandar;
     }
 

@@ -24,7 +24,8 @@ public class LlamadaHoraria extends Llamada {
     public double calcularCoste() {
         int fila = 0;
         double suma = 0;
-        double[][] tarifas = { { 0.20, 0.30, 0.40 },
+        double[][] tarifas = {
+                { 0.20, 0.30, 0.40 },
                 { 0.10, 0.40, 0.50 },
                 { 0.30, 0.50, 0.70 },
                 { 1.22, 1.90, 1.88 },
@@ -35,7 +36,7 @@ public class LlamadaHoraria extends Llamada {
 
         for (int i = 0; i < tarifas.length; i++) {
             if (franja.equals(tipo[i])) {
-                fila = i;
+
             }
         }
         /* bucle para recorrer la fila de la tarifa y conseguir el total */

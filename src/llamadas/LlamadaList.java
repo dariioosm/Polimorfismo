@@ -7,90 +7,105 @@ import java.util.Scanner;
 
 public class LlamadaList {
 
-    static ArrayList<Llamada> listin = new ArrayList<>();
+    static ArrayList<Llamada> llamadas = new ArrayList<Llamada>();
 
-    public void cargarLlamadas() {
-        listin.add(new LlamadaEstandar("98 5112233", "98 5332211", 10));
-        listin.add(new LlamadaEstandar("98 5112233", "98 1234567", 15));
-        listin.add(new LlamadaHoraria("98 5112233", "91 3333333", 5, "Y22"));
-        listin.add(new LlamadaHoraria("98 5112233", "91 5555555", 13, "C44"));
-        listin.add(new LlamadaHoraria("98 5112233", "91 5555555", 2, "A11"));
-        listin.add(new LlamadaHoraria("98 5112233", "91 5555555", 33, "R11"));
+    public void cargar() {
+        llamadas.add(new LlamadaEstandar("98 5112233", "98 5332211", 10));
+        llamadas.add(new LlamadaEstandar("98 5112233", "98 1234567", 15));
+        llamadas.add(new LlamadaHoraria("98 5112233", "91 3333333", 5, "Y22"));
+        llamadas.add(new LlamadaHoraria("98 5112233", "91 5555555", 13, "C44"));
+        llamadas.add(new LlamadaHoraria("98 5112233", "91 5555555", 2, "A11"));
+        llamadas.add(new LlamadaHoraria("98 5112233", "91 5555555", 33, "R11"));
+
     }
 
-    public void verListin() {
-        for (int v = 0; v < listin.size(); v++) {
-            System.out.println(listin.get(v).getOrigen() + " " + listin.get(v).getDestino() + " "
-                    + listin.get(v).getDuracion() + " " + listin.get(v).calcularCoste());
+    public void mostrar() {
+
+        for (int a = 0; a < llamadas.size(); a++) {
+            System.out.println(llamadas.get(a).getNumOrigen() + " " + llamadas.get(a).getNumDestino()
+                    + " " + llamadas.get(a).getDuracion() + " " + llamadas.get(a).calcularCoste());
         }
+
     }
 
-    public void calcularFactura() {
-        Scanner in = new Scanner(System.in);
+    public void calcFactura() {
+        Scanner sc = new Scanner(System.in);
+        int cuota;
         System.out.print("Introduce la cuota: ");
-        double cuota = in.nextDouble();
-        double totalCoste = 0;
+        cuota = sc.nextInt();
 
-        for (Llamada llamada : listin) {
-            totalCoste += llamada.calcularCoste();
+        for (int a = 0; a < llamadas.size(); a++) {
+            System.out.println(llamadas.get(a).calcularCoste() + " + " + "cuota" + " = "
+                    + (llamadas.get(a).calcularCoste() + cuota));
         }
 
-        totalCoste += cuota;
-        System.out.println("Coste total de todas las llamadas: " + totalCoste + "€ (incluye cuota de " + cuota + "€)");
     }
 
-    public void guardarRegistro() {
-        try (ObjectOutputStream ficheroSalida = new ObjectOutputStream(new FileOutputStream("registro.dat"))) {
-            ficheroSalida.writeObject(listin);
-            System.out.println("Se han guardado las llamadas en el registro");
-        } catch (FileNotFoundException e) {
-            System.out.println("Fichero no encontrado");
-        } catch (IOException e) {
-            System.out.println("Error en la entrada o salida de datos");
+    public static void guardarArrayList() {
+        try {
+            ObjectOutputStream ficheroSalida = new ObjectOutputStream(new FileOutputStream("FileLlamadas.dat"));
+            ficheroSalida.writeObject(llamadas);
+
+            ficheroSalida.close();
+            System.out.println("LLAMADAS guardadas correctamente...");
+
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("Error: El fichero no existe. ");
+        } catch (IOException ioe) {
+            System.out.println("Error: Fallo en la escritura en el fichero. ");
         }
+
     }
 
-    public static void cargarListin() {
-        try (ObjectInputStream ficheroEntrada = new ObjectInputStream(new FileInputStream("registro.dat"))) {
-            listin = (ArrayList<Llamada>) ficheroEntrada.readObject();
-            System.out.println("Se han cargado las llamadas correctamente");
-            for (Llamada llamada : listin) {
+    public static void cargarArrayList() {
+        try {
+            ObjectInputStream ficheroEntrada = new ObjectInputStream(new FileInputStream("FileLlamadas.dat"));
+            ArrayList<Llamada> llamadas = (ArrayList<Llamada>) ficheroEntrada.readObject();
+
+            System.out.println("Datos cargados correctamente...");
+
+            for (Llamada llamada : llamadas) {
                 if (llamada instanceof LlamadaHoraria) {
-                    LlamadaHoraria llamaH = (LlamadaHoraria) llamada;
-                    System.out.println("-----Llamadas horarias-----\n");
-                    System.out.println("Numero de origen: " + llamada.getOrigen());
-                    System.out.println("Numero de destino: " + llamada.getDestino());
+                    LlamadaHoraria llamadaHoraria = (LlamadaHoraria) llamada;
+                    System.out.println("Llamada Horaria:");
+                    System.out.println("Numero de origen: " + llamada.getNumOrigen());
+                    System.out.println("Numero de destino: " + llamada.getNumDestino());
                     System.out.println("Duracion: " + llamada.getDuracion());
-                    System.out.println("Franja Horaria: " + LlamadaHoraria.getFranja());
+                    System.out.println("Franja horaria: " + llamadaHoraria.getFranjaHoraria());
                     System.out.println();
                 }
             }
+
             ficheroEntrada.close();
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Clase no encontrada");
-        } catch (FileNotFoundException ex) {
-            System.out.println("Fichero no encontrado");
-        } catch (IOException ex) {
-            System.out.println("Error en la entrada o salida de datos");
+
+        } catch (ClassNotFoundException cnfe) {
+            System.out.println(
+                    "No se pudo acceder a la clase adecuada para revertir la Serializacion al leer del fichero.");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: El fichero no existe. ");
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            System.out.println("Error: Fallo en la lectura del fichero. ");
         }
     }
 
-    public void borrarLlamada() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Introduce el numero que desees eliminar: ");
-        String borra = in.nextLine();
-        boolean existe = false;
-        Iterator<Llamada> iterador = listin.iterator();
-        while (iterador.hasNext()) {
-            Llamada llamada = iterador.next();
-            if (llamada.getDestino().equals(borra)) {
-                iterador.remove();
-                System.out.println("Llamada eliminada: " + llamada);
-                existe = true;
+    public void eliminarLlamadasDestino() {
+        Scanner sc = new Scanner(System.in);
+        String numeroDestino;
+        System.out.println("Introduce el numero de destino para eliminar: ");
+        numeroDestino = sc.nextLine();
+        Iterator<Llamada> iterator = llamadas.iterator();
+        boolean encontrado = false;
+        while (iterator.hasNext()) {
+            Llamada llamada = iterator.next();
+            if (llamada.getNumDestino().equals(numeroDestino)) {
+                iterator.remove();
+                encontrado = true;
             }
         }
-        if (!existe) {
-            System.out.println("No existe este numero " + borra + " como destino");
+        if (!encontrado) {
+            System.out.println("No se encontraron llamadas al numero de destino: " + numeroDestino);
         }
     }
+
 }

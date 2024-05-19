@@ -1,53 +1,50 @@
 package llamadas;
 
 public class LlamadaHoraria extends Llamada {
-    private static String franja;
 
-    public static String getFranja() {
-        return franja;
+    private String franjaHoraria;
+
+    public LlamadaHoraria(String numOrigen, String numDestino, int duracion, String franjaHoraria) {
+        super(numOrigen, numDestino, duracion);
+        this.franjaHoraria = franjaHoraria;
     }
 
-    public void setFranja(String franja) {
-        this.franja = franja;
+    public String getFranjaHoraria() {
+        return franjaHoraria;
     }
 
-    public LlamadaHoraria(String franja) {
-        this.franja = franja;
+    public void setFranjaHoraria(String franjaHoraria) {
+        this.franjaHoraria = franjaHoraria;
     }
 
-    public LlamadaHoraria(String origen, String destino, int duracion, String franja) {
-        super(origen, destino, duracion);
-        this.franja = franja;
-    }
-
-    @Override
     public double calcularCoste() {
-        int fila = 0;
-        double suma = 0;
-        double[][] tarifas = {
+        String[] franjas = { "A11", "B11", "C44", "R11", "Y22" };
+        double preciomedio;
+        double tmp = 0;
+        double valores[][] = {
                 { 0.20, 0.30, 0.40 },
                 { 0.10, 0.40, 0.50 },
                 { 0.30, 0.50, 0.70 },
-                { 1.22, 1.90, 1.88 },
-                { 2.21, 2.25, 2.89 } };
-        String[] tipo = { "A11", "B11", "C44", "R11", "Y22" };
+                { 1.22, 1.90, 1.98 },
+                { 2.21, 2.25, 2.98 }
+        };
 
-        /* bucle para llegar a la altura de la tarifa */
+        for (int i = 0; i < 5; i++) {
 
-        for (int i = 0; i < tarifas.length; i++) {
-            if (franja.equals(tipo[i])) {
-                /* bucle para recorrer la fila de la tarifa y conseguir el total */
-                for (int j = 0; j < tarifas[0].length; j++) {
+            if (franjas[i].equals(franjaHoraria)) {
+                for (int j = 0; j < valores[i].length; j++) {
 
-                    suma = suma + tarifas[i][j];
-                    fila = i;
+                    tmp += valores[i][j];
                 }
+
             }
+
         }
+        preciomedio = tmp / 3;
 
-        double total = suma / 3;
-        System.out.println("El precio medio de la tarifa " + tipo[fila] + " es: " + total);
-        return total;
+        double coste = preciomedio * duracion;
+
+        return coste;
+
     }
-
 }

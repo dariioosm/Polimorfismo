@@ -3,24 +3,33 @@ package llamadas;
 import java.io.Serializable;
 
 public abstract class Llamada implements Serializable {
-    protected String origen;
-    protected String destino;
-    protected int duracion;
 
-    public String getOrigen() {
-        return origen;
+    String numOrigen;
+    String numDestino;
+    int duracion;
+
+    public Llamada(String numOrigen, String numDestino, int duracion) {
+        super();
+        this.numOrigen = numOrigen;
+        this.numDestino = numDestino;
+        this.duracion = duracion;
+
     }
 
-    public void setOrigen(String origen) {
-        this.origen = origen;
+    public String getNumOrigen() {
+        return numOrigen;
     }
 
-    public String getDestino() {
-        return destino;
+    public void setNumOrigen(String numOrigen) {
+        this.numOrigen = numOrigen;
     }
 
-    public void setDestino(String desetino) {
-        this.destino = desetino;
+    public String getNumDestino() {
+        return numDestino;
+    }
+
+    public void setNumDestino(String numDestino) {
+        this.numDestino = numDestino;
     }
 
     public int getDuracion() {
@@ -31,17 +40,6 @@ public abstract class Llamada implements Serializable {
         this.duracion = duracion;
     }
 
-    public Llamada() {
-        super();
-    }
-
-    public Llamada(String origen, String destino, int duracion) {
-        super();
-        this.origen = origen;
-        this.destino = destino;
-        this.duracion = duracion;
-    }
-
-    public abstract double calcularCoste();
+    abstract public double calcularCoste();
 
 }

@@ -1,7 +1,7 @@
 package recorrecciondelesamen;
 
 import java.util.ArrayList;
-
+import java.io.*;
 public class VentaArrayList {
     ArrayList<Venta> inventario = new ArrayList<Venta>();
 	
@@ -13,4 +13,10 @@ public class VentaArrayList {
 		inventario.add(new VentaTienda("G1",500,1,"GAP","Andrea","Valencia"));
 	}
     
+
+
+
+
+
+
 }

@@ -1,10 +1,10 @@
 Crear un proyecto java, cuyo nombre sea:  ApellidoNombre.
 
 Crea una clase “Venta” con los siguientes atributos: 
-String idproducto; 
-double precio; 
-int cantidad;
-String marca.
+    String idproducto; 
+    double precio; 
+    int cantidad;
+    String marca.
 
  Dicha clase tiene un método abstracto para el cálculo del beneficio. 
  

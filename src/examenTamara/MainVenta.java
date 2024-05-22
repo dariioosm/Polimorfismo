@@ -66,33 +66,33 @@ public class MainVenta {
         }
     }// GRABAR
 
-    public static void leerFichero(ArrayList<Venta> ventas) {
+        public static void leerFichero(ArrayList<Venta> ventas) {
 
-        double beneficio = 0;
-        try {
-            ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("ventas.dat"));
-            entrada.close();
-            System.out.println("CONTENIDO DEL FICHERO");
-            for (Venta v : ventas) {
-                if (v instanceof VentaOnline) {
-                    beneficio = ((VentaOnline) v).calcularBeneficio();
-                    System.out.println(v.toString());
-                    System.out.println("Beneficio de la venta: " + beneficio + "�");
-                } else {
-                    beneficio = ((VentaLocal) v).calcularBeneficio();
-                    System.out.println(v.toString());
-                    System.out.println("Beneficio de la venta: " + beneficio + "�");
+            double beneficio = 0;
+            try {
+                ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("ventas.dat"));
+                entrada.close();
+                System.out.println("CONTENIDO DEL FICHERO");
+                for (Venta v : ventas) {
+                    if (v instanceof VentaOnline) {
+                        beneficio = ((VentaOnline) v).calcularBeneficio();
+                        System.out.println(v.toString());
+                        System.out.println("Beneficio de la venta: " + beneficio + "�");
+                    } else {
+                        beneficio = ((VentaLocal) v).calcularBeneficio();
+                        System.out.println(v.toString());
+                        System.out.println("Beneficio de la venta: " + beneficio + "�");
+                    }
                 }
-            }
 
-        } catch (FileNotFoundException ex) {
-            System.out.println("Fichero no encontrado");
-        } catch (IOException e) {
-            System.out.println("Error en la lectura del fichero");
-        } finally {
-            System.out.println("Fin de la lectura del fichero");
-        }
-    }// LEER Y CALCULAR BENEFICIO
+            } catch (FileNotFoundException ex) {
+                System.out.println("Fichero no encontrado");
+            } catch (IOException e) {
+                System.out.println("Error en la lectura del fichero");
+            } finally {
+                System.out.println("Fin de la lectura del fichero");
+            }
+        }// LEER Y CALCULAR BENEFICIO
 
     public static void anyadirVenta(ArrayList<Venta> ventas) {
         Scanner sc = new Scanner(System.in);
@@ -192,15 +192,15 @@ public class MainVenta {
 
     }// A�ADIR UNA VENTA
 
-    public static int comprobarExiste(String cod, ArrayList<Venta> ventas) {
-        int posic = -1;
-        for (int i = 0; i < ventas.size(); i++) {
-            if (ventas.get(i).getIdProducto().equals(cod)) {
-                posic = i;
+        public static int comprobarExiste(String cod, ArrayList<Venta> ventas) {
+            int posic = -1;
+            for (int i = 0; i < ventas.size(); i++) {
+                if (ventas.get(i).getIdProducto().equals(cod)) {
+                    posic = i;
+                }
             }
-        }
-        return posic;
-    }// comprobar si ya existe el c�digo del producto
+            return posic;
+        }// comprobar si ya existe el c�digo del producto
 
     public static void buscarVenta(ArrayList<Venta> ventas) {
         Scanner sc = new Scanner(System.in);

@@ -1,6 +1,8 @@
 package recorrecciondelesamen;
 
-public abstract class Venta {
+import java.io.Serializable;
+
+public abstract class Venta implements Serializable {
     protected String idProducto;
 	protected double precio;
 	protected int cantidad;

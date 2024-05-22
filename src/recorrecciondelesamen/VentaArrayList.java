@@ -12,8 +12,8 @@ public class VentaArrayList {
 		inventario.add(new VentaTienda("H1",390,1,"H&M","Juan","Aviles"));
 		inventario.add(new VentaTienda("G1",500,1,"GAP","Andrea","Valencia"));
 	}
-    
 
+    
 
 
 

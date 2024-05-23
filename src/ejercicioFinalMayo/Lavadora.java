@@ -23,7 +23,12 @@ public class Lavadora extends Electrodomestico {
 
     @Override
     public void comprobarConsumoEnergetico() {
-
+        char[] consumo = { 'A', 'B', 'C', 'D', 'E', 'F' };
+        for (int i = 0; i < consumo.length; i++) {
+            if (consumo[i] != letra) {
+                System.out.println("Letra invalida. introduce una letra entre A y F");
+            }
+        }
     }
 
     @Override

@@ -35,7 +35,29 @@ public class Lavadora extends Electrodomestico {
 
     @Override
     public double precioFinal() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'precioFinal'");
+        char[] consumo = { 'A', 'B', 'C', 'D', 'E', 'F' };
+        int[] pInicio = { 100, 80, 60, 50, 30, 10 };
+        int temporal = -1;
+        int precio = 0;
+        for (int i = 0; i < consumo.length; i++) {
+            if (consumo[i] == letra) {
+                temporal = pInicio[i];
+            }
+        }
+        if (temporal != -1) {
+            if (peso >= 0 && peso <= 19) {
+                precio = temporal + 10;
+            } else if (peso > 19 && peso <= 49) {
+                precio = temporal + 50;
+            } else if (peso > 49 && peso <= 79) {
+                precio = temporal + 80;
+            } else if (peso > 79) {
+                precio = temporal + 100;
+            }
+        } else {
+            System.out.println("Letra de consumo no valida");
+        }
+        return precio;
     }
+
 }

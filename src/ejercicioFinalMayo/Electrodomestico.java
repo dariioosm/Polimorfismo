@@ -1,10 +1,10 @@
 package ejercicioFinalMayo;
 
-public class Electrodomestico {
+public abstract class Electrodomestico {
     protected double precioBase;
     protected int peso;
-    protected char[] consumo = { 'A', 'B', 'C', 'D', 'E', 'F' };
-    protected String[] color = { "Blanco", "Negro", "Rojo", "Azul", "Gris" };
+    protected char letra;
+    protected String colores;
 
     public double getPrecioBase() {
         return precioBase;
@@ -22,45 +22,43 @@ public class Electrodomestico {
         this.peso = peso;
     }
 
-    public char[] getConsumo() {
-        return consumo;
+    public char getLetra() {
+        return letra;
     }
 
-    public void setConsumo(char[] consumo) {
-        this.consumo = consumo;
+    public void setLetra(char letra) {
+        this.letra = letra;
     }
 
-    public String[] getColor() {
-        return color;
+    public String getColores() {
+        return colores;
     }
 
-    public void setColor(String[] color) {
-        this.color = color;
+    public void setColores(String colores) {
+        this.colores = colores;
     }
 
     public Electrodomestico() {
-
     }
 
-    public Electrodomestico(double precioBase, int peso, char[] consumo, String[] color) {
+    public Electrodomestico(double precioBase, int peso, char letra, String colores) {
         super();
         this.precioBase = precioBase;
         this.peso = peso;
-        this.consumo = consumo;
-        this.color = color;
+        this.letra = letra;
+        this.colores = colores;
     }
 
-    public void comprobarConsumoEnergetico(char consumo) {
-
+    @Override
+    public String toString() {
+        return "\n" + "Electrodomestico -> precioBase " + precioBase + " peso " + peso + " letra " + letra + " colores "
+                + colores;
     }
 
-    public void comprobarColor(String color) {
+    public abstract void comprobarConsumoEnergetico();
 
-    }
+    public abstract void comprobarColor();
 
-    public double precioFinal() {
-        double precioFin;
-        return precioFin;
-    }
+    public abstract double precioFinal();
 
 }

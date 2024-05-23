@@ -4,10 +4,11 @@ public class EjercicioMatriz {
     public static void main(String[] args) {
         EjercicioMatriz matriz= new EjercicioMatriz();
         int[][] tabla= new int[10][5];//matriz que va a contener los numeros aleatorios
-      //  int[] posicion= new int[];
         Random random= new Random();
+
         matriz.cargaMatriz(tabla);
         matriz.verMatriz(tabla);
+        matriz.multiCinco(tabla);
         matriz.multiCinco(tabla);
     }
 
@@ -47,7 +48,7 @@ public class EjercicioMatriz {
 
        //metodo que almacena en un vector los pares en posiciones pares y los impares en posicion impar
        
-       public void almacenaValor(int[][]tabla, int[]posicion){
+       public void almacenaValor(int[][]tabla){
         for(int i=0; i<tabla.length;i++){
             for(int j=0; j<tabla[0].length;j++){
 

@@ -7,7 +7,7 @@ public class EjercicioMatriz {
         EjercicioMatriz matriz = new EjercicioMatriz();
         int[][] tabla = new int[10][5]; // matriz que va a contener los numeros aleatorios
         Random random = new Random();
-        int[] memoria = new int[50];
+        int[] memoria = new int[50];// la longitud del vector es la multiplicacion del x y de la matriz
         matriz.cargaMatriz(tabla);
         matriz.verMatriz(tabla);
         matriz.multiCinco(tabla);

@@ -4,6 +4,7 @@ public class EjercicioMatriz {
     public static void main(String[] args) {
         EjercicioMatriz matriz= new EjercicioMatriz();
         int[][] tabla= new int[10][5];//matriz que va a contener los numeros aleatorios
+      //  int[] posicion= new int[];
         Random random= new Random();
         matriz.cargaMatriz(tabla);
         matriz.verMatriz(tabla);
@@ -38,12 +39,25 @@ public class EjercicioMatriz {
         for (int i=0; i<tabla.length;i++){
             for(int j=0;j<tabla[0].length;j++){
                     if (tabla[i][j]%5==0) {//si el resto es 0 al dividir entre 5
-                        System.out.println("El numero "+tabla[i][j]+"que esta en la posicion " +" Fila: "+i+" Columna: " +j+" Es multiplo de 5");
+                        System.out.println("El numero "+tabla[i][j]+" que esta en la posicion " +" Fila: "+i+" Columna: " +j+" Es multiplo de 5");
                     }
             }
         }
        }
- 
+
+       //metodo que almacena en un vector los pares en posiciones pares y los impares en posicion impar
+       
+       public void almacenaValor(int[][]tabla, int[]posicion){
+        for(int i=0; i<tabla.length;i++){
+            for(int j=0; j<tabla[0].length;j++){
+
+            }
+        }
+       }
+
+
+
+
 
     }
 

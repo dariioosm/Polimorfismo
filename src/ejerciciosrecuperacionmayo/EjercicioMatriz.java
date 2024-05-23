@@ -7,6 +7,7 @@ public class EjercicioMatriz {
         Random random= new Random();
         matriz.cargaMatriz(tabla);
         matriz.verMatriz(tabla);
+        matriz.multiCinco(tabla);
     }
 
 
@@ -36,7 +37,9 @@ public class EjercicioMatriz {
        public void multiCinco(int [][]tabla){
         for (int i=0; i<tabla.length;i++){
             for(int j=0;j<tabla[0].length;j++){
-                    
+                    if (tabla[i][j]%5==0) {//si el resto es 0 al dividir entre 5
+                        System.out.println("El numero "+tabla[i][j]+"que esta en la posicion " +" Fila: "+i+" Columna: " +j+" Es multiplo de 5");
+                    }
             }
         }
        }

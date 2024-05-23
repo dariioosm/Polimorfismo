@@ -23,14 +23,12 @@ public class Lavadora extends Electrodomestico {
 
     @Override
     public void comprobarConsumoEnergetico() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'comprobarConsumoEnergetico'");
+
     }
 
     @Override
     public void comprobarColor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'comprobarColor'");
+
     }
 
     @Override
@@ -59,5 +57,4 @@ public class Lavadora extends Electrodomestico {
         }
         return precio;
     }
-
 }

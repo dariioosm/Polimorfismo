@@ -56,6 +56,9 @@ public class EjercicioMatriz {
     // metodo que almacena en un vector los pares en posiciones pares y los impares
     // en posiciones impares
     public void almacenaValor(int[][] tabla, int[] memoria) {
+        // el int par e int impar, los utilizamos para pasar al indice siguiente y el
+        // par empieza en 0 para que +2 +4 +6... y el impar para que +1 +3 +5...
+
         int par = 0;
         int impar = 1;
         for (int i = 0; i < tabla.length; i++) {

@@ -1,6 +1,8 @@
 package ejercicioFinalMayo;
 
-public abstract class Electrodomestico {
+import java.io.Serializable;
+
+public abstract class Electrodomestico implements Serializable {
     protected double precioBase;
     protected int peso;
     protected char letra;

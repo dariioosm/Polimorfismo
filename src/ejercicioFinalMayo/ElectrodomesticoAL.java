@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class ElectrodomesticoAL {
+    public char[] CONSUMOS_VALIDOS = { 'A', 'B', 'C', 'D', 'E', 'F' };
+    public String[] COLORES_VALIDOS = { "blanco", "negro", "rojo", "azul", "gris" };
     ArrayList<Electrodomestico> ventas = new ArrayList<Electrodomestico>();
 
     public void cargaLista() {
@@ -15,40 +17,68 @@ public class ElectrodomesticoAL {
     }
 
     public void mostrarArrayList() {
-        for (Electrodomestico electrodomestico : ventas) {
-            System.out.println(electrodomestico);
+        for (Electrodomestico electrodomesticos : ventas) {
+            System.out.println(electrodomesticos);
         }
+    }
+
+    private boolean esConsumoValido(char letra) {
+        letra = Character.toUpperCase(letra);
+        for (char c : CONSUMOS_VALIDOS) {
+            if (c == letra) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean esColorValido(String color) {
+        for (String c : COLORES_VALIDOS) {
+            if (c.equalsIgnoreCase(color)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void annadirProducto() {
         Scanner in = new Scanner(System.in);
         char continua;
+        char letra;
+        String color;
+        int op;
         do {
-            System.out.println("Introduzca precio base del producto");
-            double precioBase = in.nextDouble();
-            System.out.println("Introduce el peso del producto");
-            int peso = in.nextInt();
-            System.out.println("Introduce el consumo del producto A-F");
-            char letra = in.next().charAt(0);
-            System.out.println("Introduzca el color del producto");
-            String color = in.nextLine();
-            color = in.nextLine();
-            System.out.println("Es una television (1) o una lavadora (2)");
-            int op = in.nextInt();
-            while (op != 1 && op != 2) {
-                System.out.println("Introduce una opcion valida, 1 o 2");
-            }
+
+            System.out.print("Introduzca precio base del producto: ");
+            double precioBase = Double.parseDouble(in.nextLine());
+
+            System.out.print("Introduce el peso del producto: ");
+            int peso = Integer.parseInt(in.nextLine());
+
+            do {
+                System.out.print("Introduce el consumo del producto (A-F): ");
+                letra = in.nextLine().charAt(0);
+                if (!esConsumoValido(letra)) {
+                    System.out.println("Consumo no válido. Debe estar entre A y F.");
+                }
+            } while (!esConsumoValido(letra));
+
+            do {
+                System.out.print("Introduzca el color del producto: ");
+                color = in.nextLine();
+                if (!esColorValido(color)) {
+                    System.out.println("Color no válido. Debe ser uno de: blanco, negro, rojo, azul, gris.");
+                }
+            } while (!esColorValido(color));
+            System.out.println("Introduce una opcion valida, 1 o 2");
+            op = in.nextInt();
             switch (op) {
                 case 1:
                     System.out.println("Introduce el numero de pulgadas de la TV");
                     int resolucion = in.nextInt();
                     System.out.println("Indique si es SmartTv o no (smart)");
                     String smart = in.nextLine();
-                    if (smart.equalsIgnoreCase("smart")) {
-                        boolean smartTv = true;
-                    } else {
-                        boolean smartTv = false;
-                    }
+                    boolean smartTv = in.nextLine().equalsIgnoreCase("smart");
                     ventas.add(new Television(precioBase, peso, letra, color, resolucion, false));
                     break;
 

@@ -1,6 +1,8 @@
 package ejercicioFinalMayo;
 
-public class Lavadora extends Electrodomestico {
+import java.io.Serializable;
+
+public class Lavadora extends Electrodomestico implements Serializable {
 
     private int carga;
 

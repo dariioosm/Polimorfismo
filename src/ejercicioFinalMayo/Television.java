@@ -1,6 +1,8 @@
 package ejercicioFinalMayo;
 
-public class Television extends Electrodomestico {
+import java.io.Serializable;
+
+public class Television extends Electrodomestico implements Serializable {
 
     private int resolucion;
     private boolean smartTv;

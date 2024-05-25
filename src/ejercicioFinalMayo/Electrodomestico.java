@@ -44,10 +44,6 @@ public abstract class Electrodomestico implements Serializable {
     }
 
     public Electrodomestico() {
-        this.precioBase = 100;
-        this.peso = 5;
-        this.letra = 'F';
-        this.colores = "blanco";
     }
 
     public Electrodomestico(double precioBase, int peso, char letra, String colores) {

@@ -21,6 +21,20 @@ public class Television extends Electrodomestico {
         this.smartTv = smartTv;
     }
 
+    public Television() {
+    }
+
+    public Television(int resolucion, boolean smartTv) {
+        this.resolucion = resolucion;
+        this.smartTv = smartTv;
+    }
+
+    public Television(double precioBase, int peso, char letra, String colores, int resolucion, boolean smartTv) {
+        super(precioBase, peso, letra, colores);
+        this.resolucion = resolucion;
+        this.smartTv = smartTv;
+    }
+
     @Override
     public double precioFinal() {
 

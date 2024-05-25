@@ -33,7 +33,7 @@ public class ElectrodomesticoAL {
             System.out.println("Introduzca el color del producto");
             String color = in.nextLine();
             color = in.nextLine();
-            System.out.println("Es una lavadora (1) o una television (2)");
+            System.out.println("Es una television (1) o una lavadora (2)");
             int op = in.nextInt();
             while (op != 1 && op != 2) {
                 System.out.println("Introduce una opcion valida, 1 o 2");
@@ -42,9 +42,9 @@ public class ElectrodomesticoAL {
                 case 1:
                     System.out.println("Introduce el numero de pulgadas de la TV");
                     int resolucion = in.nextInt();
-                    System.out.println("Indique si es SmartTv o no");
+                    System.out.println("Indique si es SmartTv o no (smart)");
                     String smart = in.nextLine();
-                    if (smart.equalsIgnoreCase("si")) {
+                    if (smart.equalsIgnoreCase("smart")) {
                         boolean smartTv = true;
                     } else {
                         boolean smartTv = false;

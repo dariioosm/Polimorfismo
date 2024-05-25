@@ -69,7 +69,7 @@ public class Television extends Electrodomestico implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString() + "Television -> resolucion " + resolucion + " smartTv " + smartTv
+        return super.toString() + " *** Television -> resolucion " + resolucion + " smartTv " + smartTv
                 + "precio final de la TV "
                 + precioFinal();
     }

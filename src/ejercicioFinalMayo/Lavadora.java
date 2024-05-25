@@ -28,22 +28,27 @@ public class Lavadora extends Electrodomestico {
          * Segun el consumo energetico, se aumenta el precio del electrodomestico
          * 
          */
-        double precioFin = 0;
+
+        double precioFin = precioBase;
         int[] plus = { 100, 80, 60, 50, 30, 10 };
         int[] letras = { 'A', 'B', 'C', 'D', 'E', 'F' };
         for (int i = 0; i < letras.length; i++) {
             if (letra == letras[i]) {
-                precioFin = precioBase + plus[i];
+                precioFin += plus[i];
+                break;
             }
         }
         if (peso >= 0 && peso < 20) {
-            precioFin = precioFin + 10;
+            precioFin += 10;
         } else if (peso > 19 && peso < 50) {
-            precioFin = precioFin + 50;
+            precioFin += 50;
         } else if (peso > 49 && peso < 80) {
-            precioFin = precioFin + 80;
+            precioFin += 80;
         } else if (peso > 80) {
-            precioFin = precioFin + 100;
+            precioFin += 100;
+        }
+        if (carga > 30) {
+            precioFin += 30;
         }
 
         return precioFin;

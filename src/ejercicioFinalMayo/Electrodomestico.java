@@ -56,11 +56,9 @@ public abstract class Electrodomestico {
         this.colores = colores;
     }
 
-   
-
     public void comprobarConsumoEnergetico(char[] CONSUMOS_VALIDOS) {
         for (int i = 0; i < CONSUMOS_VALIDOS.length; i++) {
-            if (letra != CONSUMOS_VALIDOS[i]) {
+            if (letra == CONSUMOS_VALIDOS[i]) {
                 System.out.println("Letra introducida: " + CONSUMOS_VALIDOS[i]);
             } else {
                 System.out.println("Letra no valida, introduce una dentro de A-F");

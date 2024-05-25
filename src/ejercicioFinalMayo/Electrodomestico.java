@@ -76,7 +76,7 @@ public abstract class Electrodomestico {
         }
     }
 
-    public abstract double precioFinal(double precioBase, char letra);
+    public abstract double precioFinal();
 
     @Override
     public String toString() {

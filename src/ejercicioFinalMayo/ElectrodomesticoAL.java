@@ -14,7 +14,7 @@ public class ElectrodomesticoAL {
         ventas.add(new Lavadora(400, 60, 'A', "verde", 15));
     }
 
-    public void imprimeLista() {
+    public void mostrarArrayList() {
         for (Electrodomestico electrodomestico : ventas) {
             System.out.println(electrodomestico);
         }
@@ -46,7 +46,7 @@ public class ElectrodomesticoAL {
                     String smart = in.nextLine();
                     if (smart.equalsIgnoreCase("si")) {
                         boolean smartTv = true;
-                    } else if (smart.equalsIgnoreCase("no")) {
+                    } else {
                         boolean smartTv = false;
                     }
                     ventas.add(new Television(precioBase, peso, letra, color, resolucion, false));
@@ -68,6 +68,8 @@ public class ElectrodomesticoAL {
         ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("Productos.dat"));
         try {
             salida.writeObject(ventas);
+            salida.close();
+            System.out.println("Producto guardado correctamente");
         } catch (FileNotFoundException ex) {
             System.out.println("Fichero no encontrado");
         } catch (IOException ex) {
@@ -75,19 +77,18 @@ public class ElectrodomesticoAL {
         }
     }
 
-    public void leeFichero() throws FileNotFoundException, IOException, ClassNotFoundException {
-
-        try {
-            ObjectOutputStream entrada = new ObjectOutputStream(new FileOutputStream("Productos.dat"));
+    public void leeFichero() {
+        try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("Productos.dat"))) {
             ventas = (ArrayList<Electrodomestico>) entrada.readObject();
-            entrada.close();
-
+            for (Electrodomestico electrodomestico : ventas) {
+                System.out.println(electrodomestico);
+            }
         } catch (ClassNotFoundException ex) {
-            System.out.println("No se encuentra la clase" + ex.getMessage());
+            System.out.println("No se encuentra la clase");
         } catch (FileNotFoundException ex) {
-            System.out.println("Archivo no encontrado " + ex.getMessage());
+            System.out.println("Archivo no encontrado");
         } catch (IOException ex) {
-            System.out.println("Error en entrada o salida de datos " + ex.getMessage());
+            System.out.println("Error en entrada o salida de datos");
         }
     }
 

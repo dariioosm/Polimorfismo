@@ -50,10 +50,10 @@ public class ElectrodomesticoAL {
         do {
 
             System.out.print("Introduzca precio base del producto: ");
-            double precioBase = Double.parseDouble(in.nextLine());
+            double precioBase = in.nextDouble();
 
             System.out.print("Introduce el peso del producto: ");
-            int peso = Integer.parseInt(in.nextLine());
+            int peso = in.nextInt();
 
             do {
                 System.out.print("Introduce el consumo del producto (A-F): ");

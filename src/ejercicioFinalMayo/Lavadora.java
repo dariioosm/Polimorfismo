@@ -18,9 +18,32 @@ public class Lavadora extends Electrodomestico {
     }
 
     @Override
-    public double precioFinal() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'precioFinal'");
+    public String toString() {
+        return super.toString() + " Lavadora -> carga" + carga;
+    }
+
+    @Override
+    public double precioFinal(double precioBase, char letra) {
+        double precioFin = 0;
+
+        /*
+         * Segun el consumo energetico, se aumenta el precio del electrodomestico
+         * 
+         */
+        if (letra == 'A') {
+            precioFin = precioBase + 100;
+        } else if (letra == 'B') {
+            precioFin = precioBase + 80;
+        } else if (letra == 'C') {
+            precioFin = precioBase + 60;
+        } else if (letra == 'D') {
+            precioFin = precioBase + 50;
+        } else if (letra == 'E') {
+            precioFin = precioBase + 30;
+        } else if (letra == 'F') {
+            precioFin = precioBase + 10;
+        }
+        return precioFin;
     }
 
 }

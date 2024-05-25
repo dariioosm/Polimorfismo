@@ -51,4 +51,10 @@ public class Television extends Electrodomestico {
         return precioFin;
     }
 
+    @Override
+    public String toString() {
+        return "Television -> resolucion " + resolucion + " smartTv " + smartTv + "precio final de la TV "
+                + precioFinal();
+    }
+
 }

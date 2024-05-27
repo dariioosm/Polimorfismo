@@ -17,8 +17,8 @@ public class ElectrodomesticoAL {
     }
 
     public void mostrarArrayList() {
-        for (Electrodomestico electrodomesticos : ventas) {
-            System.out.println(electrodomesticos);
+        for (Electrodomestico registro : ventas) {
+            System.out.println(registro);
         }
     }
 

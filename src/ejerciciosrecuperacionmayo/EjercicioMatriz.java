@@ -11,8 +11,6 @@ public class EjercicioMatriz {
         matriz.cargaMatriz(tabla);
         matriz.verMatriz(tabla);
         matriz.multiCinco(tabla);
-        System.out.println(
-                "Si hay mas numero mayor proporcion de numeros pares o impares, el contenido del array se llena con '0'");
         matriz.almacenaValor(tabla, memoria);
     }
 
@@ -81,6 +79,8 @@ public class EjercicioMatriz {
         for (int k = 0; k < memoria.length; k++) {
             if (memoria[k] != 0) {
                 System.out.print("\n" + "En la posicion [" + k + "] está el número: " + memoria[k] + " " + "\n");
+            } else {
+                System.out.println("\n" + "En la posicion [" + k + "] la memoria esta vacia: " + "\n");
             }
 
         }

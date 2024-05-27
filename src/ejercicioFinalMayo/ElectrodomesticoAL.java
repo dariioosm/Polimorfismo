@@ -54,7 +54,7 @@ public class ElectrodomesticoAL {
 
             System.out.print("Introduce el peso del producto: ");
             int peso = in.nextInt();
-            in.nextLine();// limpia bufer?
+            in.nextLine();// limpia bufer
 
             do {
                 System.out.print("Introduce el consumo del producto (A-F): ");

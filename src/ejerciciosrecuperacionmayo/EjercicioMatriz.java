@@ -21,7 +21,7 @@ public class EjercicioMatriz {
         // bucle anidado para meter los numeros random
         for (int i = 0; i < tabla.length; i++) {
             for (int j = 0; j < tabla[0].length; j++) {
-                tabla[i][j] = random.nextInt(1001);
+                tabla[i][j] = random.nextInt(1000) + 1;
             }
         }
     }

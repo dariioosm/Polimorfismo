@@ -78,7 +78,7 @@ public class EjercicioMatriz {
         }
         System.out.println("\nEl contenido del vector memoria:");
         for (int k = 0; k < memoria.length; k++) {
-            System.out.print(memoria[k] + " ");
+            System.out.print("\n" + "En la posicion " + k + " está el número: " + memoria[k] + " " + "\n");
         }
         System.out.println();
     }

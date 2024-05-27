@@ -49,7 +49,7 @@ public class EjercicioMatriz {
                 }
             }
         }
-        System.out.println("Hay un total de: " + cont + " numeros que son multiplos de 5");
+        System.out.println("\n" + "Hay un total de: " + cont + " numeros que son multiplos de 5");
     }
 
     // metodo que almacena en un vector los pares en posiciones pares y los impares
@@ -78,9 +78,9 @@ public class EjercicioMatriz {
         System.out.println("\nEl contenido del vector memoria:");
         for (int k = 0; k < memoria.length; k++) {
             if (memoria[k] != 0) {
-                System.out.print("\n" + "En la posicion [" + k + "] está el número: " + memoria[k] + " " + "\n");
+                System.out.print("\n" + "En la posicion [" + k + "] esta el número: " + memoria[k] + " " + "\n");
             } else {
-                System.out.println("\n" + "En la posicion [" + k + "] la memoria esta vacia: " + "\n");
+                System.out.println("\n" + "En la posicion [" + k + "] la memoria esta vacia " + "\n");
             }
 
         }

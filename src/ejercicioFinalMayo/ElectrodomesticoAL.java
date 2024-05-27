@@ -54,6 +54,7 @@ public class ElectrodomesticoAL {
 
             System.out.print("Introduce el peso del producto: ");
             int peso = in.nextInt();
+            in.nextLine();// limpia bufer?
 
             do {
                 System.out.print("Introduce el consumo del producto (A-F): ");
@@ -70,13 +71,13 @@ public class ElectrodomesticoAL {
                     System.out.println("Color no válido. Debe ser uno de: blanco, negro, rojo, azul, gris.");
                 }
             } while (!esColorValido(color));
-            System.out.println("Introduce una opcion valida, 1 o 2");
+            System.out.println("Introduce una opcion valida, Television 1  o 2 Lavadora");
             op = in.nextInt();
             switch (op) {
                 case 1:
                     System.out.println("Introduce el numero de pulgadas de la TV");
                     int resolucion = in.nextInt();
-                    System.out.println("Indique si es SmartTv o no (smart)");
+                    System.out.println("Escribe smart para indicar si es smart o no, si no lo es");
                     String smart = in.nextLine();
                     boolean smartTv = in.nextLine().equalsIgnoreCase("smart");
                     ventas.add(new Television(precioBase, peso, letra, color, resolucion, false));

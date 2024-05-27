@@ -11,7 +11,8 @@ public class EjercicioMatriz {
         matriz.cargaMatriz(tabla);
         matriz.verMatriz(tabla);
         matriz.multiCinco(tabla);
-        System.out.println("\n" + "Aclaracion: El primer indice de un vector o una matriz es 0 (par)");
+        System.out.println(
+                "Si hay mas numero mayor proporcion de numeros pares o impares, el contenido del array se llena con '0'");
         matriz.almacenaValor(tabla, memoria);
     }
 
@@ -78,7 +79,10 @@ public class EjercicioMatriz {
         }
         System.out.println("\nEl contenido del vector memoria:");
         for (int k = 0; k < memoria.length; k++) {
-            System.out.print("\n" + "En la posicion " + k + " está el número: " + memoria[k] + " " + "\n");
+            if (memoria[k] != 0) {
+                System.out.print("\n" + "En la posicion [" + k + "] está el número: " + memoria[k] + " " + "\n");
+            }
+
         }
         System.out.println();
     }

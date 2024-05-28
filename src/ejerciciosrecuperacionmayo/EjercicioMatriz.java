@@ -86,4 +86,8 @@ public class EjercicioMatriz {
         }
         System.out.println();
     }
+
+    public boolean esPrimo(){
+        return true;
+    }
 }

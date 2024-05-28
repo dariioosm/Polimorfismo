@@ -79,7 +79,7 @@ public class ElectrodomesticoAL {
                     int resolucion = in.nextInt();
                     System.out.println("Escribe smart para indicar si es smart o no, si no lo es");
                     String smart = in.nextLine();
-                    boolean smartTv = in.nextLine().equalsIgnoreCase("smart");
+                    boolean smartTv = in.next(smart).equalsIgnoreCase("smart");
                     ventas.add(new Television(precioBase, peso, letra, color, resolucion, false));
                     break;
 

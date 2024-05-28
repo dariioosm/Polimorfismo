@@ -40,7 +40,7 @@ public class Lavadora extends Electrodomestico implements Serializable {
 
         double precioFin = precioBase;
         int[] plus = { 100, 80, 60, 50, 30, 10 };
-        int[] letras = { 'A', 'B', 'C', 'D', 'E', 'F' };
+        char[] letras = { 'A', 'B', 'C', 'D', 'E', 'F' };
         for (int i = 0; i < letras.length; i++) {
             // para comparar char entre ellos se utiliza igual
             // para comparar string se utiliza el equals
@@ -55,7 +55,7 @@ public class Lavadora extends Electrodomestico implements Serializable {
             precioFin += 50;
         } else if (peso > 49 && peso < 80) {
             precioFin += 80;
-        } else if (peso > 80) {
+        } else if (peso >= 80) {
             precioFin += 100;
         }
         if (carga > 30) {

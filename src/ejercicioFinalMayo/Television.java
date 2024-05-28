@@ -61,7 +61,7 @@ public class Television extends Electrodomestico implements Serializable {
         }
         if (resolucion > 40) {
             precioFin = precioFin * 1.3;
-        } else if (smartTv = true) {
+        } else if (smartTv == true) {
             precioFin = precioFin + 50;
         }
         return precioFin;

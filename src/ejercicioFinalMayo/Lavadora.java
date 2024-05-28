@@ -42,6 +42,8 @@ public class Lavadora extends Electrodomestico implements Serializable {
         int[] plus = { 100, 80, 60, 50, 30, 10 };
         int[] letras = { 'A', 'B', 'C', 'D', 'E', 'F' };
         for (int i = 0; i < letras.length; i++) {
+            // para comparar char entre ellos se utiliza igual
+            // para comparar string se utiliza el equals
             if (letra == letras[i]) {
                 precioFin += plus[i];
                 break;

@@ -97,6 +97,7 @@ public class Matriz {
         System.out.println();
         System.out.println("El mayor par es: " + maxP + " el menor par es: " + minP);
 
+        // bucle para impares
         for (int j = 0; j < memoriaImpar.length; j++) {
             if (memoriaImpar[j] > maxI) {
                 maxI = memoriaImpar[j];

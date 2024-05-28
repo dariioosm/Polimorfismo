@@ -120,16 +120,16 @@ public class Matriz {
                 }
                 if(tabla[i][j]<min){
                     min=tabla[i][j];
-                    imax=i;
-                    jmax=j;
+                    imin=i;
+                    jmin=j;
                 }
             }
         }
         System.out.println();
         System.out.println("*** MAXIMOS Y MINIMOS DE LA TABLA ***");
         System.out.println();
-        System.out.println("El maximo de la tabla es: "+max+"en la posicion "+imax+" "+jmax);
-        System.out.println("El maximo de la tabla es: "+min+"en la posicion "+imin+" "+jmin);
+        System.out.println("El maximo de la tabla es: "+max+" en la posicion ["+(imax+1)+"] ["+(jmax+1)+"]");
+        System.out.println("El maximo de la tabla es: "+min+" en la posicion ["+(imin+1)+"] ["+(jmin+1)+"]");
     }
 
 }

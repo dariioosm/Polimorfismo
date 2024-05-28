@@ -3,23 +3,27 @@ package matrizFinal;
 import java.util.Random;
 
 public class Matriz {
-    /* matriz 10*5 random 100+1 y que se guarde numeros pares en un vector e impares en otro */
+    /*
+     * matriz 10*5 random 100+1 y que se guarde numeros pares en un vector e impares
+     * en otro
+     */
     public static void main(String[] args) {
-        Matriz matriz= new Matriz();
-        int [][] tabla= new int[10][5];
+        Matriz matriz = new Matriz();
+        int[][] tabla = new int[10][5];
         Random random = new Random();
-        int memoriaPar[]= new int[50];
-        int memoriaImpar[]= new int[50];
+        int memoriaPar[] = new int[50];
+        int memoriaImpar[] = new int[50];
 
         matriz.cargaMatriz(tabla);
         matriz.verMatriz(tabla);
         matriz.guardaNumeros(tabla, memoriaPar, memoriaImpar);
         matriz.imprimeImpar(memoriaImpar);
         matriz.imprimePar(memoriaPar);
-        matriz.maximoMinimo(memoriaPar,memoriaImpar);
+        matriz.maximoMinimo(memoriaPar, memoriaImpar);
         matriz.maximoMininoTabla(tabla);
     }
-     public void cargaMatriz(int[][] tabla) {
+
+    public void cargaMatriz(int[][] tabla) {
         Random random = new Random();
         // bucle anidado para meter los numeros random
         for (int i = 0; i < tabla.length; i++) {
@@ -39,97 +43,101 @@ public class Matriz {
         }
     }
 
-    public void guardaNumeros(int [][]tabla,int[]memoriaPar,int [] memoriaImpar){
-        for(int i=0; i<tabla.length;i++){
-            for(int j=0; j<tabla[0].length;j++){
-                if(tabla[i][j]%2==0){
-                    memoriaPar[i]=tabla[i][j];
+    public void guardaNumeros(int[][] tabla, int[] memoriaPar, int[] memoriaImpar) {
+        int indicePar = 0;
+        int indiceImpar = 0;
+        for (int i = 0; i < tabla.length; i++) {
+            for (int j = 0; j < tabla[0].length; j++) {
+                if (tabla[i][j] % 2 == 0) {
+                    memoriaPar[indicePar++] = tabla[i][j];
+                } else {
+                    memoriaImpar[indiceImpar++] = tabla[i][j];
                 }
-                else{
-                    memoriaImpar[i]=tabla[i][j];
-                }
             }
         }
     }
-    public void imprimePar(int[]memoriaPar){
+
+    public void imprimePar(int[] memoriaPar) {
         System.out.println();
-        System.out.println("**** NUMEROS PARES EN VECTOR PAR ****");
-        for(int i=0; i<memoriaPar.length;i++){
-            if(memoriaPar[i]!=0){
-                System.out.println("En la posicion ["+i+"] se encuentra el numero "+memoriaPar[i]);
+        System.out.println("**** NUMEROS PARES EN VECTOR PAR ****" + "\n");
+        for (int i = 0; i < memoriaPar.length; i++) {
+            if (memoriaPar[i] != 0) {
+                System.out.println("En la posicion [" + i + "] se encuentra el numero " + memoriaPar[i] + "\n");
             }
-            
+
         }
     }
-    public void imprimeImpar(int [] memoriaImpar){
+
+    public void imprimeImpar(int[] memoriaImpar) {
         System.out.println();
         System.out.println();
-        System.out.println("**** NUMERO IMPARES EN VECTOR IMPAR ****");
-        for(int i=0;i<memoriaImpar.length;i++){
-            if(memoriaImpar[i]!=0){
-                System.out.println("En la posicion ["+i+"] se encuentra el numero "+memoriaImpar[i]);
+        System.out.println("**** NUMERO IMPARES EN VECTOR IMPAR ****" + "\n");
+        for (int i = 0; i < memoriaImpar.length; i++) {
+            if (memoriaImpar[i] != 0) {
+                System.out.println("En la posicion [" + i + "] se encuentra el numero " + memoriaImpar[i] + "\n");
             }
         }
     }
-    public void maximoMinimo(int[]memoriaPar,int []memoriaImpar){
-        int maxP=1;
-        int minP=999;
-        int maxI=1;
-        int minI=999;
-        //bucle para los pares
-        for(int i=0; i<memoriaPar.length;i++){
-            if(memoriaPar[i]>maxP){
-                maxP=memoriaPar[i];
-            }
-            else if(memoriaPar[i]<minP&&memoriaPar[i]!=0){
-                minP=memoriaPar[i];
+
+    public void maximoMinimo(int[] memoriaPar, int[] memoriaImpar) {
+        int maxP = 1;
+        int minP = 999;
+        int maxI = 1;
+        int minI = 999;
+        // bucle para los pares
+        for (int i = 0; i < memoriaPar.length; i++) {
+            if (memoriaPar[i] > maxP) {
+                maxP = memoriaPar[i];
+            } else if (memoriaPar[i] < minP && memoriaPar[i] != 0) {
+                minP = memoriaPar[i];
             }
         }
         System.out.println();
         System.out.println("*** MAXIMO Y MINIMOS DE LAS MEMORIAS PAR E IMPAR ***");
         System.out.println();
-        System.out.println("El mayor par es: "+maxP+" el menor par es: "+minP);
+        System.out.println("El mayor par es: " + maxP + " el menor par es: " + minP);
 
-        for(int j=0; j<memoriaImpar.length;j++){
-            if(memoriaImpar[j]>maxI){
-                maxI=memoriaImpar[j];
-            }
-            else if(memoriaImpar[j]<minI&&memoriaImpar[j]!=0){
-                minI=memoriaImpar[j];
+        for (int j = 0; j < memoriaImpar.length; j++) {
+            if (memoriaImpar[j] > maxI) {
+                maxI = memoriaImpar[j];
+            } else if (memoriaImpar[j] < minI && memoriaImpar[j] != 0) {
+                minI = memoriaImpar[j];
             }
         }
-        System.out.println("El mayor impar es: "+maxI+" el menor impar es: "+minI);
-    
+        System.out.println("El mayor impar es: " + maxI + " el menor impar es: " + minI);
+
     }
 
-    public void maximoMininoTabla(int [][] tabla){
-        int max=1;
-        int imin=0;
-        int imax=0;
-        int jmax=0;
-        int jmin=0;
-        int min=999;
-        //sacar posicion de los maximos y minimos
-        for (int i=0; i<tabla.length;i++){
-            for(int j=0; j<tabla[0].length;j++){
-                if(tabla[i][j]>max){
-                    max=tabla[i][j];
-                    imax=i;
-                    jmax=j;
+    public void maximoMininoTabla(int[][] tabla) {
+        int max = 1;
+        int imin = 0;
+        int imax = 0;
+        int jmax = 0;
+        int jmin = 0;
+        int min = 999;
+        // sacar posicion de los maximos y minimos
+        for (int i = 0; i < tabla.length; i++) {
+            for (int j = 0; j < tabla[0].length; j++) {
+                if (tabla[i][j] > max) {
+                    max = tabla[i][j];
+                    imax = i;
+                    jmax = j;
 
                 }
-                if(tabla[i][j]<min){
-                    min=tabla[i][j];
-                    imin=i;
-                    jmin=j;
+                if (tabla[i][j] < min) {
+                    min = tabla[i][j];
+                    imin = i;
+                    jmin = j;
                 }
             }
         }
         System.out.println();
         System.out.println("*** MAXIMOS Y MINIMOS DE LA TABLA ***");
         System.out.println();
-        System.out.println("El maximo de la tabla es: "+max+" en la posicion ["+(imax+1)+"] ["+(jmax+1)+"]");
-        System.out.println("El maximo de la tabla es: "+min+" en la posicion ["+(imin+1)+"] ["+(jmin+1)+"]");
+        System.out.println(
+                "El maximo de la tabla es: " + max + " en la posicion [" + (imax + 1) + "] [" + (jmax + 1) + "]");
+        System.out.println(
+                "El maximo de la tabla es: " + min + " en la posicion [" + (imin + 1) + "] [" + (jmin + 1) + "]");
     }
 
 }

@@ -122,12 +122,13 @@ public class ElectrodomesticoAL {
             System.out.println("Error en entrada o salida de datos");
         }
     }
-//para diferenciar el tipo de producto para sacar el monto total tengo que hacer un instanceof que llame
-// a la clase television o lavadora usando un if (deberia funcinar solo con un for each)
+    // para diferenciar el tipo de producto para sacar el monto total tengo que
+    // hacer un instanceof que llame
+    // a la clase television o lavadora usando un if (deberia funcinar solo con un
+    // for each)
 
-public void beneficios(){
-    
-}
+    public void beneficios() {
 
+    }
 
 }

@@ -108,7 +108,7 @@ public class ElectrodomesticoAL {
         }
     }
 
-    public void leeFichero() {
+    public void leeFichero() throws ClassNotFoundException, FileNotFoundException, IOException {
         try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("Productos.dat"))) {
             ventas = (ArrayList<Electrodomestico>) entrada.readObject();
             for (Electrodomestico electrodomestico : ventas) {

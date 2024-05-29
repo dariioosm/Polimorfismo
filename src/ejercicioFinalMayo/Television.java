@@ -47,12 +47,11 @@ public class Television extends Electrodomestico implements Serializable {
         for (int i = 0; i < letras.length; i++) {
             if (letra == letras[i]) {
                 precioFin += plus[i];
-                break;
             }
         }
         if (peso >= 0 && peso <= 19) {
             precioFin += 10;
-        } else if (peso >=20 && peso <= 49) {
+        } else if (peso >= 20 && peso <= 49) {
             precioFin += 50;
         } else if (peso >= 50 && peso <= 79) {
             precioFin += 80;
@@ -61,7 +60,8 @@ public class Television extends Electrodomestico implements Serializable {
         }
         if (resolucion > 40) {
             precioFin = precioFin * 1.3;
-        } if (smartTv == true) {
+        }
+        if (smartTv == true) {
             precioFin = precioFin + 50;
         }
         return precioFin;

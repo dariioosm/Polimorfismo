@@ -127,8 +127,17 @@ public class ElectrodomesticoAL {
     // a la clase television o lavadora usando un if (deberia funcinar solo con un
     // for each)
 
-    public void beneficios() {
-
+    public void totalPorProductos() {
+        double totalLavadora=0;
+        double totalTelevision=0;
+        for(Electrodomestico ele:ventas){
+            if(ele instanceof Lavadora){
+                totalLavadora+=ele.precioFinal();
+            }else if(ele instanceof Television){
+                totalTelevision+=ele.precioFinal();;
+            }
+        }
+        System.out.println("El dinero total recaudado por la venta de Lavadoras es = "+totalLavadora+"\n"+"El total de dinero recaudado por la venta de Televisiones es = "+totalTelevision);
     }
 
 }

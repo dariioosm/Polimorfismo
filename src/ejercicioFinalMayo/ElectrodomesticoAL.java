@@ -7,7 +7,7 @@ public class ElectrodomesticoAL {
     public char[] CONSUMOS_VALIDOS = { 'A', 'B', 'C', 'D', 'E', 'F' };
     public String[] COLORES_VALIDOS = { "blanco", "negro", "rojo", "azul", "gris" };
     ArrayList<Electrodomestico> ventas = new ArrayList<Electrodomestico>();
-
+    ArrayList<Electrodomestico>ventas2=new ArrayList<Electrodomestico>();
     public void cargaLista() {
         ventas.add(new Television(500, 10, 'E', "negro", 42, false));
         ventas.add(new Television(200, 20, 'C', "naranja", 30, true));
@@ -104,8 +104,8 @@ public class ElectrodomesticoAL {
 
     public void leeFichero() throws ClassNotFoundException, FileNotFoundException, IOException {
         try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("Productos.dat"))) {
-            ventas = (ArrayList<Electrodomestico>) entrada.readObject();
-            for (Electrodomestico electrodomestico : ventas) {
+            ventas2 = (ArrayList<Electrodomestico>) entrada.readObject();
+            for (Electrodomestico electrodomestico : ventas2) {
                 System.out.println(electrodomestico);
             }
         } catch (ClassNotFoundException ex) {
@@ -122,7 +122,7 @@ public class ElectrodomesticoAL {
     // for each)
 
     public void muestraPrecioFinal(){
-        for (Electrodomestico electro : ventas) {
+        for (Electrodomestico electro : ventas2) {
             if(electro instanceof Lavadora){
                 System.out.println(electro.precioFinal());
             }else if(electro instanceof Television){
@@ -134,7 +134,8 @@ public class ElectrodomesticoAL {
     public void totalPorProductos() {
         double totalLavadora=0;
         double totalTelevision=0;
-        for(Electrodomestico electro:ventas){
+        
+        for(Electrodomestico electro:ventas2){
             if(electro instanceof Lavadora){
                 totalLavadora+=electro.precioFinal();
             }else if(electro instanceof Television){

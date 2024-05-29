@@ -156,7 +156,6 @@ public class Matriz {
                     for (int k = 2; k <= Math.sqrt(num); k++) {
                         if (num % k == 0) {
                             esPrimo = false;
-                            break;
                         }
                     }
                 }

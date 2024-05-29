@@ -28,7 +28,7 @@ public class Lavadora extends Electrodomestico implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString() + " *** Lavadora -> carga" + carga + " precio final de la lavadora " + precioFinal();
+        return super.toString() + " *** Lavadora -> carga" + carga;
     }
 
     @Override

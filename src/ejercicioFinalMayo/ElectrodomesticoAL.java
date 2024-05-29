@@ -121,6 +121,16 @@ public class ElectrodomesticoAL {
     // a la clase television o lavadora usando un if (deberia funcinar solo con un
     // for each)
 
+    public void muestraPrecioFinal(){
+        for (Electrodomestico electro : ventas) {
+            if(electro instanceof Lavadora){
+                System.out.println(electro.precioFinal());
+            }else if(electro instanceof Television){
+                System.out.println(electro.precioFinal());
+            }
+        }
+    }
+
     public void totalPorProductos() {
         double totalLavadora=0;
         double totalTelevision=0;
@@ -128,10 +138,10 @@ public class ElectrodomesticoAL {
             if(electro instanceof Lavadora){
                 totalLavadora+=electro.precioFinal();
             }else if(electro instanceof Television){
-                totalTelevision+=electro.precioFinal();;
+                totalTelevision+=electro.precioFinal();
             }
         }
-        System.out.println("El dinero total recaudado por la venta de Lavadoras es = "+totalLavadora+"\n"+"El total de dinero recaudado por la venta de Televisiones es = "+totalTelevision+"\n"+"El dinero recuadado total de Televisiones y Lavadoras es: "+totalLavadora+totalTelevision);
+        System.out.println("El dinero total recaudado por la venta de Lavadoras es = "+totalLavadora+"\n"+"El total de dinero recaudado por la venta de Televisiones es = "+totalTelevision+"\n"+"El dinero recuadado total de Televisiones y Lavadoras es: "+(totalLavadora+totalTelevision));
     }
 
 }

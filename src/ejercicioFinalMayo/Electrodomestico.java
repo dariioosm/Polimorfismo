@@ -2,13 +2,12 @@ package ejercicioFinalMayo;
 
 import java.io.Serializable;
 
+//implementar serializable en la padre y en las hijas
 public abstract class Electrodomestico implements Serializable {
     protected double precioBase;
     protected int peso;
     protected char letra;
     protected String colores;
-
-  
 
     public double getPrecioBase() {
         return precioBase;

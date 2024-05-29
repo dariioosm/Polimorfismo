@@ -76,6 +76,7 @@ public class ElectrodomesticoAL {
             case 1:
                 System.out.println("Introduce el numero de pulgadas de la TV");
                 int resolucion = in.nextInt();
+                in.nextLine();
                 System.out.println("Escribe smart para indicar si es smart o no, si no lo es");
                 String smart = in.nextLine();
                 boolean smartTv = smart.equalsIgnoreCase("smart");

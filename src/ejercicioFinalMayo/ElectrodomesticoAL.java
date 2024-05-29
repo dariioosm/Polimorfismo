@@ -131,7 +131,7 @@ public class ElectrodomesticoAL {
                 totalTelevision+=electro.precioFinal();;
             }
         }
-        System.out.println("El dinero total recaudado por la venta de Lavadoras es = "+totalLavadora+"\n"+"El total de dinero recaudado por la venta de Televisiones es = "+totalTelevision);
+        System.out.println("El dinero total recaudado por la venta de Lavadoras es = "+totalLavadora+"\n"+"El total de dinero recaudado por la venta de Televisiones es = "+totalTelevision+"\n"+"El dinero recuadado total de Televisiones y Lavadoras es: "+totalLavadora+totalTelevision);
     }
 
 }

@@ -29,6 +29,9 @@ public class Menu {
                     lista.leeFichero();
                     break;
                 case 5:
+                    lista.totalPorProductos();
+                    break;
+                case 6:
                     System.out.println("Saliendo del programa.");
                     break;
 
@@ -44,7 +47,8 @@ public class Menu {
         System.out.println("2. Agrega productos al inventario.");
         System.out.println("3. Grabar los productos en un fichero.");
         System.out.println("4. Leer los productos grabados en el fichero");
-        System.out.println("5. Salir.");
+        System.out.println("5. Ver dinero ingresado por tipo de producto");
+        System.out.println("6. Salir.");
         System.out.print("Elige una opción: ");
     }
 }

@@ -29,16 +29,18 @@ public class Menu {
                     lista.leeFichero();
                     break;
                 case 5:
-                    lista.totalPorProductos();
+                    lista.muestraPrecioFinal();
                     break;
                 case 6:
+                    lista.totalPorProductos();  
+                    break;
+                case 7:
                     System.out.println("Saliendo del programa.");
                     break;
-
                 default:
                     System.out.println("Opción inválida. Inténtalo de nuevo.");
             }
-        } while (opcion != 6);
+        } while (opcion != 7);
     }
 
     private static void mostrarMenu() {
@@ -47,8 +49,9 @@ public class Menu {
         System.out.println("2. Agrega productos al inventario.");
         System.out.println("3. Grabar los productos en un fichero.");
         System.out.println("4. Leer los productos grabados en el fichero");
-        System.out.println("5. Ver dinero ingresado por tipo de producto");
-        System.out.println("6. Salir.");
+        System.out.println("5. Sacar precios finales por tipo de producto");
+        System.out.println("6. Ver dinero ingresado por tipo de producto");
+        System.out.println("7. Salir.");
         System.out.print("Elige una opción: ");
     }
 }

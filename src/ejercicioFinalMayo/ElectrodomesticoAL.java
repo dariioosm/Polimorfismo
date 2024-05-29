@@ -124,9 +124,9 @@ public class ElectrodomesticoAL {
     public void muestraPrecioFinal(){
         for (Electrodomestico electro : ventas2) {
             if(electro instanceof Lavadora){
-                System.out.println(electro.precioFinal());
+                System.out.println( "El precio final de la lavadora "+electro+" es "+electro.precioFinal());
             }else if(electro instanceof Television){
-                System.out.println(electro.precioFinal());
+                System.out.println("El precio final de la television"+electro+" es "+electro.precioFinal());
             }
         }
     }

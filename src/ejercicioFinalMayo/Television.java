@@ -50,18 +50,18 @@ public class Television extends Electrodomestico implements Serializable {
                 break;
             }
         }
-        if (peso >= 0 && peso < 20) {
+        if (peso >= 0 && peso <= 19) {
             precioFin += 10;
-        } else if (peso > 19 && peso < 50) {
+        } else if (peso >=20 && peso <= 49) {
             precioFin += 50;
-        } else if (peso > 49 && peso < 80) {
+        } else if (peso >= 50 && peso <= 79) {
             precioFin += 80;
         } else if (peso > 80) {
             precioFin += 100;
         }
         if (resolucion > 40) {
             precioFin = precioFin * 1.3;
-        } else if (smartTv == true) {
+        } if (smartTv == true) {
             precioFin = precioFin + 50;
         }
         return precioFin;

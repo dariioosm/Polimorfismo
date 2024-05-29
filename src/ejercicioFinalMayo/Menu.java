@@ -32,7 +32,7 @@ public class Menu {
                     lista.muestraPrecioFinal();
                     break;
                 case 6:
-                    lista.totalPorProductos();  
+                    lista.totalPorProductos();
                     break;
                 case 7:
                     System.out.println("Saliendo del programa.");

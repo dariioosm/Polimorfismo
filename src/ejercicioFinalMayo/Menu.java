@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
         ElectrodomesticoAL lista = new ElectrodomesticoAL();
         lista.cargaLista();
         int opcion;

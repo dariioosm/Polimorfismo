@@ -79,7 +79,7 @@ public class ElectrodomesticoAL {
                     int resolucion = in.nextInt();
                     System.out.println("Escribe smart para indicar si es smart o no, si no lo es");
                     String smart = in.nextLine();
-                    boolean smartTv = in.nextLine().equalsIgnoreCase("smart");
+                    boolean smartTv = in.next(smart).equalsIgnoreCase("smart");
                     ventas.add(new Television(precioBase, peso, letra, color, resolucion, false));
                     break;
 
@@ -108,7 +108,7 @@ public class ElectrodomesticoAL {
         }
     }
 
-    public void leeFichero() {
+    public void leeFichero() throws ClassNotFoundException, FileNotFoundException, IOException {
         try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("Productos.dat"))) {
             ventas = (ArrayList<Electrodomestico>) entrada.readObject();
             for (Electrodomestico electrodomestico : ventas) {
@@ -122,12 +122,13 @@ public class ElectrodomesticoAL {
             System.out.println("Error en entrada o salida de datos");
         }
     }
-//para diferenciar el tipo de producto para sacar el monto total tengo que hacer un instanceof que llame
-// a la clase television o lavadora usando un if (deberia funcinar solo con un for each)
+    // para diferenciar el tipo de producto para sacar el monto total tengo que
+    // hacer un instanceof que llame
+    // a la clase television o lavadora usando un if (deberia funcinar solo con un
+    // for each)
 
-public void beneficios(){
-    
-}
+    public void beneficios() {
 
+    }
 
 }

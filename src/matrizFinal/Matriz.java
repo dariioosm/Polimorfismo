@@ -21,6 +21,7 @@ public class Matriz {
         matriz.imprimePar(memoriaPar);
         matriz.maximoMinimo(memoriaPar, memoriaImpar);
         matriz.maximoMininoTabla(tabla);
+        matriz.encontrarPrimos(tabla);
     }
 
     public void cargaMatriz(int[][] tabla) {
@@ -105,7 +106,7 @@ public class Matriz {
                 minI = memoriaImpar[j];
             }
         }
-        System.out.println("El mayor impar es: " + maxI + " el menor impar es: " + minI);
+        System.out.println("\n" + "El mayor impar es: " + maxI + " el menor impar es: " + minI);
 
     }
 
@@ -138,12 +139,36 @@ public class Matriz {
         System.out.println(
                 "El maximo de la tabla es: " + max + " en la posicion [" + (imax + 1) + "] [" + (jmax + 1) + "]");
         System.out.println(
-                "El maximo de la tabla es: " + min + " en la posicion [" + (imin + 1) + "] [" + (jmin + 1) + "]");
+                "El minimo de la tabla es: " + min + " en la posicion [" + (imin + 1) + "] [" + (jmin + 1) + "]");
     }
 
-    public void rellenaMatrizTeclado(int[][] matriz, int fila, int columna) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'rellenaMatrizTeclado'");
+    public static void encontrarPrimos(int[][] tabla) {
+        int contadorPrimos = 0;
+        System.out.println("\n" + "*** NUMEROS PRIMOS CONTENIDOS EN LA MATRIZ ***");
+        for (int i = 0; i < tabla.length; i++) {
+            for (int j = 0; j < tabla[i].length; j++) {
+                int num = tabla[i][j];
+                boolean esPrimo = true;
+
+                if (num <= 1)
+                    esPrimo = false;
+                else {
+                    for (int k = 2; k <= Math.sqrt(num); k++) {
+                        if (num % k == 0) {
+                            esPrimo = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (esPrimo) {
+                    contadorPrimos++;
+                    System.out.println("\n" + "El número primo " + num + " está en la posición [" + i + "][" + j + "]");
+                }
+            }
+        }
+
+        System.out.println("\n" + "El número total de primos en la matriz es: " + contadorPrimos);
     }
 
 }

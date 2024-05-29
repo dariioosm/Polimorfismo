@@ -1,6 +1,6 @@
 package matrizFinal;
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 public class Matriz2 {
     public static void main(String[] args) {
@@ -32,7 +32,8 @@ public class Matriz2 {
                             fila = in.nextInt();
 
                         } while (!(fila >= 0 && fila < matriz.length));
-                        System.out.println("La suma de los numeros de la fila " + fila + " es: " + sumaFila(matriz, fila));
+                        System.out.println(
+                                "La suma de los numeros de la fila " + fila + " es: " + sumaFila(matriz, fila));
                     } else {
                         System.out.println("No se ha rellenado la matriz");
                     }
@@ -44,7 +45,8 @@ public class Matriz2 {
                             columna = in.nextInt();
 
                         } while (!(columna >= 0 && columna < matriz[0].length));
-                        System.out.println("La suma de los numeros de la columna " + columna + " es: " + sumaColumna(matriz, columna));
+                        System.out.println("La suma de los numeros de la columna " + columna + " es: "
+                                + sumaColumna(matriz, columna));
                     } else {
                         System.out.println("No se ha rellenado la matriz");
                     }

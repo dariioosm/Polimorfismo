@@ -43,12 +43,9 @@ public class ElectrodomesticoAL {
 
     public void annadirProducto() {
         Scanner in = new Scanner(System.in);
-        char continua;
         char letra;
         String color;
         int op;
-        do {
-
             System.out.print("Introduzca precio base del producto: ");
             double precioBase = in.nextDouble();
 
@@ -89,10 +86,7 @@ public class ElectrodomesticoAL {
                     ventas.add(new Lavadora(precioBase, peso, letra, color, carga));
                     break;
             }
-            System.out.println("Desea continuar(S/N)");
-            continua = in.next().charAt(0);
-
-        } while (continua == 'S' || continua == 's');
+            System.out.println("Producto annadido correctamente");
     }
 
     public void grabaFichero() throws FileNotFoundException, IOException {

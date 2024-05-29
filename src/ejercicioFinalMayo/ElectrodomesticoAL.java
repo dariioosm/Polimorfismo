@@ -130,11 +130,11 @@ public class ElectrodomesticoAL {
     public void totalPorProductos() {
         double totalLavadora=0;
         double totalTelevision=0;
-        for(Electrodomestico ele:ventas){
-            if(ele instanceof Lavadora){
-                totalLavadora+=ele.precioFinal();
-            }else if(ele instanceof Television){
-                totalTelevision+=ele.precioFinal();;
+        for(Electrodomestico electro:ventas){
+            if(electro instanceof Lavadora){
+                totalLavadora+=electro.precioFinal();
+            }else if(electro instanceof Television){
+                totalTelevision+=electro.precioFinal();;
             }
         }
         System.out.println("El dinero total recaudado por la venta de Lavadoras es = "+totalLavadora+"\n"+"El total de dinero recaudado por la venta de Televisiones es = "+totalTelevision);

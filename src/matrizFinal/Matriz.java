@@ -141,4 +141,9 @@ public class Matriz {
                 "El maximo de la tabla es: " + min + " en la posicion [" + (imin + 1) + "] [" + (jmin + 1) + "]");
     }
 
+    public void rellenaMatrizTeclado(int[][] matriz, int fila, int columna) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'rellenaMatrizTeclado'");
+    }
+
 }

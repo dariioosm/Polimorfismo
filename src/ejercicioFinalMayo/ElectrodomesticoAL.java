@@ -3,7 +3,7 @@ package ejercicioFinalMayo;
 import java.io.*;
 import java.util.*;
 
-//solucion a la escritura y lectura de atributos especificos del ArrayList
+//solucion a la escritura y lectura de atributos especificos del ArrayList en ejerciciofinalmayo2
 public class ElectrodomesticoAL {
     public char[] CONSUMOS_VALIDOS = { 'A', 'B', 'C', 'D', 'E', 'F' };
     public String[] COLORES_VALIDOS = { "blanco", "negro", "rojo", "azul", "gris" };

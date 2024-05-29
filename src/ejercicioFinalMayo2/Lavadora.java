@@ -21,6 +21,10 @@ public class Lavadora extends Electrodomestico implements Serializable {
         this.carga = carga;
     }
 
+    public Lavadora(double precioBase, int peso) {
+        super(precioBase, peso);
+    }
+
     public Lavadora(double precioBase, int peso, char letra, String colores, int carga) {
         super(precioBase, peso, letra, colores);
         this.carga = carga;

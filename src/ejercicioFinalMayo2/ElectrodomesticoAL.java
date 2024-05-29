@@ -3,6 +3,7 @@ package ejercicioFinalMayo2;
 import java.io.*;
 import java.util.*;
 
+//solucion a la escritura de atributos especificos al final del programa
 public class ElectrodomesticoAL {
     public char[] CONSUMOS_VALIDOS = { 'A', 'B', 'C', 'D', 'E', 'F' };
     public String[] COLORES_VALIDOS = { "blanco", "negro", "rojo", "azul", "gris" };
@@ -147,5 +148,53 @@ public class ElectrodomesticoAL {
                 + "El total de dinero recaudado por la venta de Televisiones es = " + totalTelevision + "\n"
                 + "El dinero recuadado total de Televisiones y Lavadoras es: " + (totalLavadora + totalTelevision));
     }
+
+    /*
+     * public void grabaFichero() {
+     * try (ObjectOutputStream salida = new ObjectOutputStream(new
+     * FileOutputStream("Productos.dat"))) {
+     * for (Electrodomestico electrodomestico : ventas) {
+     * if (electrodomestico instanceof Television) {
+     * salida.writeObject(electrodomestico);
+     * } else if (electrodomestico instanceof Lavadora) {
+     * salida.writeObject(electrodomestico);
+     * }
+     * }
+     * System.out.println("Productos guardados correctamente en productos.dat.");
+     * } catch (IOException e) {
+     * System.out.println("Error al grabar en productos.dat: " + e.getMessage());
+     * }
+     * }
+     * 
+     * public void leeFichero() {
+     * try (ObjectInputStream entrada = new ObjectInputStream(new
+     * FileInputStream("Productos.dat"))) {
+     * while (true) {
+     * try {
+     * Electrodomestico electrodomestico = (Electrodomestico) entrada.readObject();
+     * ventas2.add(electrodomestico);
+     * } catch (EOFException e) {
+     * break;
+     * }
+     * }
+     * System.out.
+     * println("Contenido del archivo productos.dat (solo atributos específicos de cada clase hija):"
+     * );
+     * for (Electrodomestico electrodomestico : ventas2) {
+     * if (electrodomestico instanceof Television) {
+     * Television tv = (Television) electrodomestico;
+     * System.out.println("Television - Resolución: " + tv.getResolucion() +
+     * ", Smart TV: " + tv.isSmartTv());
+     * } else if (electrodomestico instanceof Lavadora) {
+     * Lavadora lavadora = (Lavadora) electrodomestico;
+     * System.out.println("Lavadora - Carga: " + lavadora.getCarga());
+     * }
+     * }
+     * } catch (IOException | ClassNotFoundException e) {
+     * System.out.println("Error al leer desde productos.dat: " + e.getMessage());
+     * }
+     * }
+     * 
+     */
 
 }

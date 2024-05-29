@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
         ElectrodomesticoAL lista = new ElectrodomesticoAL();
+        FicheroNuevo ficha = new FicheroNuevo();
         lista.cargaLista();
         int opcion;
         Scanner in = new Scanner(System.in);
@@ -35,12 +36,20 @@ public class Menu {
                     lista.totalPorProductos();
                     break;
                 case 7:
+                    System.out.println("Grabar peso y precio base en un fichero nuevo:");
+                    ficha.grabarPreciosYPesos();
+                    System.out.println("Datos grabados en el fichero productos2.dat.");
+                    System.out.println("Leyendo datos del fichero productos2.dat:");
+                    ficha.leerPreciosYPesos();
+                    break;
+
+                case 8:
                     System.out.println("Saliendo del programa.");
                     break;
                 default:
                     System.out.println("Opción inválida. Inténtalo de nuevo.");
             }
-        } while (opcion != 7);
+        } while (opcion != 8);
     }
 
     private static void mostrarMenu() {
@@ -51,7 +60,8 @@ public class Menu {
         System.out.println("4. Leer los productos grabados en el fichero");
         System.out.println("5. Sacar precios finales por tipo de producto");
         System.out.println("6. Ver dinero ingresado por tipo de producto");
-        System.out.println("7. Salir.");
+        System.out.println("7. Grabar peso y preciobase en un fichero nuevo");
+        System.out.println("8. Salir.");
         System.out.print("Elige una opción: ");
     }
 }

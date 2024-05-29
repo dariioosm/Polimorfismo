@@ -26,6 +26,10 @@ public class Television extends Electrodomestico implements Serializable {
     public Television() {
     }
 
+    public Television(double precioBase, int peso) {
+        super(precioBase, peso);
+    }
+
     public Television(int resolucion, boolean smartTv) {
         this.resolucion = resolucion;
         this.smartTv = smartTv;

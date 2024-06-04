@@ -5,7 +5,9 @@ public class Notas {
 	public static void main(String[] args) {
 		
 		Notas nota= new Notas();
-		
+		double notaPra=0;
+		double notaPro=0;
+		double notaT=0;
 		String [] titulos= new String[]{"ALUMNO","PRACTICA","PROBLEMAS","TEORIA"};
 		String []alumnos= new String[]{"AAA AAA","BBB BBB","CCC CCC","FFF FFF","JJJ JJJ"};
 		double[][] notas= new double[][] {
@@ -16,7 +18,8 @@ public class Notas {
 									{7,5,3}};
 		
 		nota.mostrarMatriz(titulos,alumnos,notas);
-		nota.notas(alumnos, notas);
+		nota.notas(alumnos, notas,notaPra,notaPro,notaT);
+		nota.verNotas(alumnos, notas, notaPra, notaPro, notaT);
 	}
 	public static void mostrarMatriz(String [] titulos, String [] alumnos,double [][] notas) {  /* sacar por pantalla los datos tabulados */
 		
@@ -34,25 +37,30 @@ public class Notas {
 		
 	}
 	
-	public static void notas(String[]alumnos,double[][] notas) {
-		int pos=0;
-		double suma=0;
-		double notaPra,notaPro,notaT;
+	public static void notas(String[]alumnos,double[][] notas,double notaPa,
+	double notaPo,
+	double notaTe) {
+		double notaPra,double notaPro,double notaT
+		
 		
 		for(int i=0; i<notas.length;i++) {
 			for(int j=0; j<notas[0].length;j++) {
 				notaPra=notas[i][0]*0.1;
 				notaPro=notas[i][1]*0.5;
 				notaT=notas[i][2]*0.4;
-				
-				System.out.println("\n"+ " Alumno "+alumnos[i]+"La nota practica es "+notaPra+"La nota problemas es: "+notaPro+
-						"La nota teorica es: "+notaT+" La nota final es: "+(suma=notaPra+notaPro+notaT)+"\n");
-
 			}
-			
 		}
-		
+		double notaPa=notaPra;
+		double notaPo=notaPro;
+		double notaTe=notaT;
 	}	
 	
-	
+	public static void verNotas(String[]alumnos,double[][] notas,double notaPra,double notaPro,double notaT){
+		double suma=0;
+		for(int i=0;i<alumnos.length;i++){
+			System.out.println("\n"+ " Alumno "+alumnos[i]+"La nota practica es "+notaPra+"La nota problemas es: "+notaPro+
+						"La nota teorica es: "+notaT+" La nota final es: "+(suma=notaPra+notaPro+notaT)+"\n");
+
+		}
+	}	
 }

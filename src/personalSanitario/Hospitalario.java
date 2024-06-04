@@ -27,7 +27,7 @@ public class Hospitalario extends Sanitario implements Serializable{
 
 
 	
-	@SuppressWarnings("unlikely-arg-type")
+
 	@Override
 	public double calculoNomina() {
 		double nomina=1700;

@@ -1,6 +1,7 @@
 package personalSanitario;
 
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class PersonalArrayList {
@@ -56,31 +57,49 @@ public class PersonalArrayList {
 	}
 
 	public void grabaFichero() {
-		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("Personal.dat"))) {
-
-			salida.writeObject(plantilla);
-			salida.close();
-
-			System.out.println("Personal guardado exitosamente en personal.dat");
-		} catch (IOException e) {
-			System.out.println("Error al grabar en productos.dat: " + e.getMessage());
+		FileOutputStream fichero = null;
+		FicheroNuevo f = new FicheroNuevo();
+		Hospitalario h = new Hospitalario();
+		try {
+			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("Personal.dat"));
+			ObjectOutputStream oos = new ObjectOutputStream(fichero);
+			oos.writeObject(this.plantilla2);
+			System.out.println("Fichero guardado.");
+			System.out.println();
+		} catch (FileNotFoundException ex) {
+			ex.printStackTrace();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				fichero.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
 	public void leeFichero() {
-		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("Personal.dat"))) {
-			plantilla2 = (ArrayList<Sanitario>) entrada.readObject();
-			for (Sanitario persona : plantilla2) {
-				Hospitalario hosp = (Hospitalario) persona;
-				System.out.println("Numero de registro " + hosp.getNumeroRegistro() + " Salario Final con trienios "
-						+ hosp.calculoNomina());
+		try {
+			FileInputStream fin = new FileInputStream("Hospital.dat");
+			ObjectInputStream ois = new ObjectInputStream(fin);
+			plantilla2 = (ArrayList<FicheroNuevo>) ois.readObject();
+			ois.close();
+			DecimalFormat df = new DecimalFormat("#.00");
+			FicheroNuevo f = new FicheroNuevo();
+			for (FicheroNuevo li : plantilla2) {
+				System.out.println("leeyendo");
+				System.out.println(li.toString());
 			}
-		} catch (ClassNotFoundException ex) {
-			System.out.println("No se encuentra la clase");
-		} catch (FileNotFoundException ex) {
-			System.out.println("Archivo no encontrado");
-		} catch (IOException ex) {
-			System.out.println("Error en entrada o salida de datos");
+
+		} catch (ClassNotFoundException cnfe) {
+			System.out.println("No se pudo acceder a la clase adecuada para revertirlo.");
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("Error: el fichero no existe.");
+		} catch (IOException ioe) {
+			System.out.println(ioe.getMessage());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 

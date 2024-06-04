@@ -11,6 +11,10 @@ public class Hospitalario extends Sanitario implements Serializable {
 		this.hospital = hospital;
 	}
 
+	public Hospitalario() {
+		//TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return super.toString() + "Hospitalario [hospital=" + hospital + "]";
@@ -30,16 +34,13 @@ public class Hospitalario extends Sanitario implements Serializable {
 		double nominaF = 0;
 		String[] prima = { "A1/A", "A2/B", "B/-", "C1/C", "C2/D" };
 		double[] dinero = { 45.29, 36.93, 32.41, 27.95, 19.02 };
-
 		for (int i = 0; i < prima.length; i++) {
-			if (prima[i].equalsContent(this.numeroTrienios)) {
-				nominaF = dinero[i] * nomina;
-
+			if (this.getGrupo().equals(prima[i])) {
+				nominaF = nomina + (dinero[i] * getNumeroTrienios());
 			}
 		}
-
 		return nominaF;
-
 	}
+
 
 }

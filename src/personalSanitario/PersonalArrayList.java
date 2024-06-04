@@ -5,7 +5,7 @@ import java.util.*;
 
 public class PersonalArrayList {
 	ArrayList<Sanitario> plantilla = new ArrayList<Sanitario>();
-	ArrayList<Sanitario> plantilla2 = new ArrayList<Sanitario>();
+	ArrayList<FicheroNuevo> plantilla2 = new ArrayList<FicheroNuevo>();
 
 	public String[] trienios_validos = { "A1/A", "A2/B", "B/-", "C1/C", "C2/D" };
 

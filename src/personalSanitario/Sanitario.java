@@ -3,7 +3,7 @@ import java.io.*;
 public abstract class Sanitario implements Serializable {
    protected String apellidoNombre;
    protected String numeroRegistro;
-   protected int numeroTrienios;
+   protected String numeroTrienios;
    protected String grupo;
    
 public String getApellidoNombre() {
@@ -18,10 +18,10 @@ public String getNumeroRegistro() {
 public void setNumeroRegistro(String numeroRegistro) {
 	this.numeroRegistro = numeroRegistro;
 }
-public int getNumeroTrienios() {
+public String getNumeroTrienios() {
 	return numeroTrienios;
 }
-public void setNumeroTrienios(int numeroTrienios) {
+public void setNumeroTrienios(String numeroTrienios) {
 	this.numeroTrienios = numeroTrienios;
 }
 public String getGrupo() {
@@ -35,7 +35,7 @@ public Sanitario() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public Sanitario(String apellidoNombre, String numeroRegistro, int numeroTrienios, String grupo) {
+public Sanitario(String apellidoNombre, String numeroRegistro, String numeroTrienios, String grupo) {
 	super();
 	this.apellidoNombre = apellidoNombre;
 	this.numeroRegistro = numeroRegistro;

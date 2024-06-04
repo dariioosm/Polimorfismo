@@ -8,6 +8,9 @@ public class Notas {
 		double notaPra=0;
 		double notaPro=0;
 		double notaT=0;
+		double notaPa=0;
+		double notaPo=0;
+		double notaTe=0;
 		String [] titulos= new String[]{"ALUMNO","PRACTICA","PROBLEMAS","TEORIA"};
 		String []alumnos= new String[]{"AAA AAA","BBB BBB","CCC CCC","FFF FFF","JJJ JJJ"};
 		double[][] notas= new double[][] {
@@ -18,7 +21,7 @@ public class Notas {
 									{7,5,3}};
 		
 		nota.mostrarMatriz(titulos,alumnos,notas);
-		nota.notas(alumnos, notas,notaPra,notaPro,notaT);
+		nota.notas(alumnos, notas,notaPra,notaPro,notaT, notaPa,notaPo,notaTe);
 		nota.verNotas(alumnos, notas, notaPra, notaPro, notaT);
 	}
 	public static void mostrarMatriz(String [] titulos, String [] alumnos,double [][] notas) {  /* sacar por pantalla los datos tabulados */
@@ -37,12 +40,8 @@ public class Notas {
 		
 	}
 	
-	public static void notas(String[]alumnos,double[][] notas,double notaPa,
-	double notaPo,
-	double notaTe) {
-		double notaPra,double notaPro,double notaT
-		
-		
+	public static void notas(String[]alumnos,double[][] notas,double notaPra,double notaPro,double notaT,double notaPa,double notaPo,double notaTe) {
+	
 		for(int i=0; i<notas.length;i++) {
 			for(int j=0; j<notas[0].length;j++) {
 				notaPra=notas[i][0]*0.1;
@@ -50,16 +49,16 @@ public class Notas {
 				notaT=notas[i][2]*0.4;
 			}
 		}
-		double notaPa=notaPra;
-		double notaPo=notaPro;
-		double notaTe=notaT;
+		notaPa=notaPra;
+		notaPo=notaPro;
+		notaTe=notaT;
 	}	
 	
-	public static void verNotas(String[]alumnos,double[][] notas,double notaPra,double notaPro,double notaT){
+	public static void verNotas(String[]alumnos,double[][] notas,double notaPa,double notaPo,double notaTe){
 		double suma=0;
 		for(int i=0;i<alumnos.length;i++){
-			System.out.println("\n"+ " Alumno "+alumnos[i]+"La nota practica es "+notaPra+"La nota problemas es: "+notaPro+
-						"La nota teorica es: "+notaT+" La nota final es: "+(suma=notaPra+notaPro+notaT)+"\n");
+			System.out.println("\n"+ " Alumno "+alumnos[i]+"La nota practica es "+notaPa+"La nota problemas es: "+notaPo+
+						"La nota teorica es: "+notaTe+" La nota final es: "+(suma=notaPa+notaPo+notaTe)+"\n");
 
 		}
 	}	

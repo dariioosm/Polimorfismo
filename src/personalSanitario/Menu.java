@@ -4,6 +4,7 @@ public class Menu {
 
 	public static void main(String[] args) {
 		PersonalArrayList persona= new PersonalArrayList();
+		FicheroNuevo fn=new FicheroNuevo();
 		persona.cargarLista();
 		 int opcion;
 	        Scanner in = new Scanner(System.in);

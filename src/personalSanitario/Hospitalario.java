@@ -1,8 +1,6 @@
 package personalSanitario;
 
-import java.io.*;
-
-public class Hospitalario extends Sanitario implements Serializable {
+public class Hospitalario extends Sanitario {
 	private String hospital;
 
 	public Hospitalario(String apellidoNombre, String numeroRegistro, int numeroTrienios, String grupo,
@@ -12,7 +10,7 @@ public class Hospitalario extends Sanitario implements Serializable {
 	}
 
 	public Hospitalario() {
-		//TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -41,6 +39,5 @@ public class Hospitalario extends Sanitario implements Serializable {
 		}
 		return nominaF;
 	}
-
 
 }

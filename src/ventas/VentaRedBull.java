@@ -63,8 +63,15 @@ public class VentaRedBull extends Venta {
 
     @Override
     public double calcularIngresoVenta() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularIngresoVenta'");
+        int[]precio={350,250,100,60};
+        String[]tipo={"SP","GP","GA","EG"};
+        double ingreso=0;
+        for(int i=0; i<tipo.length;i++){
+            if(getTipoEntrada().equalsIgnoreCase(tipo[i])){
+                ingreso=getNumeroEntradas()*precio[i];
+            }
+        }
+        return ingreso;
     }
     
 }

@@ -21,9 +21,8 @@ public class VentaRedBull extends Venta {
         this.numeroEntradas = numeroEntradas;
     }
 
-    public VentaRedBull(String tipoEntrada, int numeroEntradas) {
-        this.tipoEntrada = tipoEntrada;
-        this.numeroEntradas = numeroEntradas;
+    public VentaRedBull() {
+        super();
     }
 
     public VentaRedBull(String fechaHora, String evento, String tipoEntrada, int numeroEntradas) {
@@ -34,8 +33,8 @@ public class VentaRedBull extends Venta {
 
     @Override
     public String toString() {
-        return super.toString() + "VentaRedBull [tipoEntrada=" + tipoEntrada + ", numeroEntradas=" + numeroEntradas
-                + "]";
+        return super.toString() + " --- VentaRedBull tipoEntrada " + tipoEntrada + ", numeroEntradas " + numeroEntradas
+                + "\n";
     }
 
     @Override

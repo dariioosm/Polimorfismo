@@ -64,7 +64,7 @@ public class VentaArrayList {
                     String linea = ficheroEntrada.readUTF();
                     System.out.println(linea);
                 } catch (EOFException e) {
-                    System.out.println("Error");
+                    break;
                 }
             }
         } catch (FileNotFoundException e) {

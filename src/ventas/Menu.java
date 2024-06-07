@@ -21,30 +21,34 @@ public class Menu {
                     var.cargaLista();
                     break;
                 case 2:
-                    var.borraVenta();
+                    var.calculaVentas();
                     break;
                 case 3:
-                    var.grabaFichero();
+                    var.borraVenta();
                     break;
                 case 4:
-                    var.leerFichero();
+                    var.grabaFichero();
                     break;
                 case 5:
+                    var.leerFichero();
+                    break;
+                case 6:
                     System.out.println("Saliendo del programa");
                     break;
                 default:
                     System.out.println("Opción inválida. Inténtalo de nuevo.");
             }
-        } while (opcion != 5);
+        } while (opcion != 6);
     }
 
     private static void mostrarMenu() {
         System.out.println("Menú:");
         System.out.println("1. Visualizar el registro de ventas.");
-        System.out.println("2. Borrar persona utilizando nombre de evento.");
-        System.out.println("3. Grabar los productos en un fichero.");
-        System.out.println("4. Leer los productos grabados en el fichero");
-        System.out.println("5. Salir.");
+        System.out.println("2. Visualizar ingresos por evento.");
+        System.out.println("3. Borrar persona utilizando nombre de evento.");
+        System.out.println("4. Grabar los productos en un fichero.");
+        System.out.println("5. Leer los productos grabados en el fichero");
+        System.out.println("6. Salir.");
         System.out.print("Elige una opción: ");
     }
 }

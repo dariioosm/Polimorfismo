@@ -45,12 +45,15 @@ public class Retencion {
     public void imprimeRet(String[] codigos, int[] suma, double[] fin) {
         int[] min = { 0, 1000, 1300, 1800 };
         int[] max = { 999, 1299, 1799, 5000 };
-        double[] ret = { 0.03, 0.07, 0.12, 0.21 };
+        double[] ret = { 3, 7, 12,21 };
         for (int i = 0; i < suma.length; i++) {
-            if (suma[i] >= min[i] && suma[i] <= max[i]) {
-                fin[i] = ret[i] * suma[i];
+            for(int j=0; j<min.length;j++){
+                if (suma[i] >= min[j] && suma[i] <= max[j]) {
+                    System.out.println("la retencion aplicada al trabajador " + codigos[i] + "con sueldo "+suma[i]+ " es " + ret[j] + " %");    
+               }
             }
-            System.out.println("la retencion aplicada al trabajador " + codigos[i] + " es " + fin[i] + " euros");
+           
+            
         }
 
     }

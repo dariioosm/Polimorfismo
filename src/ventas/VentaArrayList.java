@@ -6,9 +6,14 @@ import java.text.DecimalFormat;
 
 public class VentaArrayList {
 
+<<<<<<< HEAD
     ArrayList<Venta> ventas = new ArrayList<Venta>();
     ArrayList<NuevoFichero> ventas2 = new ArrayList<NuevoFichero>();
 
+=======
+    ArrayList<Venta> ventas = new ArrayList<>();
+    ArrayList<NuevoFichero>ventas2= new ArrayList<>();
+>>>>>>> 5766385e804076bde8677b459243fc8764fe132c
     public void rellenaList() {
         ventas.add(new VentaRedBull("22Julio24:0023:00", "RedBull8", "GP", 1000));
         ventas.add(new VentaRedBull("23Julio24:0023:00", "RedBull9", "GA", 3000));
@@ -44,19 +49,40 @@ public class VentaArrayList {
     }
 
     public void grabaFichero() {
+<<<<<<< HEAD
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ventasRB.dat"))) {
             oos.writeObject(this.ventas);
             System.out.println("Contenido guardado correctamente en fichero");
+=======
+        
+        for (NuevoFichero lista : ventas2) {
+            ventas2.add( new NuevoFichero(lista.getFechaHora(),lista.getIngreso()));
+        }
+
+        try (ObjectOutputStream ficheroSalida = new ObjectOutputStream(new FileOutputStream("ventasrb.dat"))) {
+            for (NuevoFichero lista : ventas2) {
+                ficheroSalida.writeObject(ficheroSalida);;
+            }
+            System.out.println("Fichero escrito correctamente");
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado: " + e.getMessage());
+>>>>>>> 5766385e804076bde8677b459243fc8764fe132c
         } catch (IOException e) {
             System.out.println("Error al guardar el fichero: " + e.getMessage());
         }
     }
 
     public void leerFichero() {
+<<<<<<< HEAD
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("ventasRB.dat"))) {
             ventas2 = (ArrayList<NuevoFichero>) ois.readObject();
             for (NuevoFichero venta : ventas2) {
                 System.out.println(venta);
+=======
+        try (ObjectInputStream ficheroEntrada = new ObjectInputStream(new FileInputStream("ventasrb.dat"))) {
+            while (true) {
+                System.out.println(ventas2);
+>>>>>>> 5766385e804076bde8677b459243fc8764fe132c
             }
             System.out.println("Contenido leído correctamente del fichero");
         } catch (ClassNotFoundException cnfe) {

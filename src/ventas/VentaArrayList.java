@@ -6,14 +6,8 @@ import java.text.DecimalFormat;
 
 public class VentaArrayList {
 
-<<<<<<< HEAD
-    ArrayList<Venta> ventas = new ArrayList<Venta>();
-    ArrayList<NuevoFichero> ventas2 = new ArrayList<NuevoFichero>();
-
-=======
     ArrayList<Venta> ventas = new ArrayList<>();
     ArrayList<NuevoFichero>ventas2= new ArrayList<>();
->>>>>>> 5766385e804076bde8677b459243fc8764fe132c
     public void rellenaList() {
         ventas.add(new VentaRedBull("22Julio24:0023:00", "RedBull8", "GP", 1000));
         ventas.add(new VentaRedBull("23Julio24:0023:00", "RedBull9", "GA", 3000));

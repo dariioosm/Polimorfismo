@@ -1,6 +1,8 @@
 package ventas;
 
-public class VentaRedBull extends Venta {
+import java.io.Serializable;
+
+public class VentaRedBull extends Venta implements Serializable {
 
     private String tipoEntrada;
     private int numeroEntradas;

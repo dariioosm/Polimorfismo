@@ -1,6 +1,8 @@
 package ventas;
 
-public abstract class Venta {
+import java.io.Serializable;
+
+public abstract class Venta implements Serializable {
     protected String fechaHora;
     protected String evento;
 

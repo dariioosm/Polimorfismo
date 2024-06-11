@@ -1,14 +1,13 @@
 package ventas;
 
 import java.util.*;
-
-import llamadas.Llamada;
-
 import java.io.*;
+import java.text.DecimalFormat;
 
 public class VentaArrayList {
 
-    ArrayList<Venta> ventas = new ArrayList<>();
+    ArrayList<Venta> ventas = new ArrayList<Venta>();
+    ArrayList<NuevoFichero> ventas2 = new ArrayList<NuevoFichero>();
 
     public void rellenaList() {
         ventas.add(new VentaRedBull("22Julio24:0023:00", "RedBull8", "GP", 1000));
@@ -45,32 +44,27 @@ public class VentaArrayList {
     }
 
     public void grabaFichero() {
-        try (ObjectOutputStream ficheroSalida = new ObjectOutputStream(new FileOutputStream("ventasrb.dat"))) {
-            for (Venta lista : ventas) {
-                ficheroSalida.writeUTF(lista.getFechaHora() + " " + lista.calcularIngresoVenta());
-            }
-            System.out.println("Fichero escrito correctamente");
-        } catch (FileNotFoundException e) {
-            System.out.println("Fichero no encontrado: " + e.getMessage());
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ventasRB.dat"))) {
+            oos.writeObject(this.ventas);
+            System.out.println("Contenido guardado correctamente en fichero");
         } catch (IOException e) {
-            System.out.println("Error en la entrada o salida de datos: " + e.getMessage());
+            System.out.println("Error al guardar el fichero: " + e.getMessage());
         }
     }
 
     public void leerFichero() {
-        try (ObjectInputStream ficheroEntrada = new ObjectInputStream(new FileInputStream("ventasrb.dat"))) {
-            while (true) {
-                try {
-                    String linea = ficheroEntrada.readUTF();
-                    System.out.println(linea);
-                } catch (EOFException e) {
-                    break;
-                }
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("ventasRB.dat"))) {
+            ventas2 = (ArrayList<NuevoFichero>) ois.readObject();
+            for (NuevoFichero venta : ventas2) {
+                System.out.println(venta);
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("Error: El fichero no existe. ");
-        } catch (IOException e) {
-            System.out.println("Error en la lectura del fichero: " + e.getMessage());
+            System.out.println("Contenido leído correctamente del fichero");
+        } catch (ClassNotFoundException cnfe) {
+            System.out.println("No se pudo acceder a la clase adecuada para revertirlo.");
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("Error: el fichero no existe.");
+        } catch (IOException ioe) {
+            System.out.println("Error de entrada/salida: " + ioe.getMessage());
         }
     }
 }

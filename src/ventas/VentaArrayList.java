@@ -49,11 +49,7 @@ public class VentaArrayList {
     }
 
     public void grabaFichero() {
-<<<<<<< HEAD
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ventasRB.dat"))) {
-            oos.writeObject(this.ventas);
-            System.out.println("Contenido guardado correctamente en fichero");
-=======
+
         
         for (NuevoFichero lista : ventas2) {
             ventas2.add( new NuevoFichero(lista.getFechaHora(),lista.getIngreso()));
@@ -66,23 +62,18 @@ public class VentaArrayList {
             System.out.println("Fichero escrito correctamente");
         } catch (FileNotFoundException e) {
             System.out.println("Fichero no encontrado: " + e.getMessage());
->>>>>>> 5766385e804076bde8677b459243fc8764fe132c
+
         } catch (IOException e) {
             System.out.println("Error al guardar el fichero: " + e.getMessage());
         }
     }
 
     public void leerFichero() {
-<<<<<<< HEAD
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("ventasRB.dat"))) {
-            ventas2 = (ArrayList<NuevoFichero>) ois.readObject();
-            for (NuevoFichero venta : ventas2) {
-                System.out.println(venta);
-=======
+
         try (ObjectInputStream ficheroEntrada = new ObjectInputStream(new FileInputStream("ventasrb.dat"))) {
             while (true) {
                 System.out.println(ventas2);
->>>>>>> 5766385e804076bde8677b459243fc8764fe132c
+
             }
             System.out.println("Contenido leído correctamente del fichero");
         } catch (ClassNotFoundException cnfe) {

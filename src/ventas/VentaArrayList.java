@@ -9,7 +9,7 @@ import java.io.*;
 public class VentaArrayList {
 
     ArrayList<Venta> ventas = new ArrayList<>();
-
+    ArrayList<NuevoFichero>ventas2= new ArrayList<>();
     public void rellenaList() {
         ventas.add(new VentaRedBull("22Julio24:0023:00", "RedBull8", "GP", 1000));
         ventas.add(new VentaRedBull("23Julio24:0023:00", "RedBull9", "GA", 3000));
@@ -45,9 +45,14 @@ public class VentaArrayList {
     }
 
     public void grabaFichero() {
+        
+        for (NuevoFichero lista : ventas2) {
+            ventas2.add( new NuevoFichero(lista.getFechaHora(),lista.getIngreso()));
+        }
+
         try (ObjectOutputStream ficheroSalida = new ObjectOutputStream(new FileOutputStream("ventasrb.dat"))) {
-            for (Venta lista : ventas) {
-                ficheroSalida.writeUTF(lista.getFechaHora() + " " + lista.calcularIngresoVenta());
+            for (NuevoFichero lista : ventas2) {
+                ficheroSalida.writeObject(ficheroSalida);;
             }
             System.out.println("Fichero escrito correctamente");
         } catch (FileNotFoundException e) {
@@ -60,12 +65,7 @@ public class VentaArrayList {
     public void leerFichero() {
         try (ObjectInputStream ficheroEntrada = new ObjectInputStream(new FileInputStream("ventasrb.dat"))) {
             while (true) {
-                try {
-                    String linea = ficheroEntrada.readUTF();
-                    System.out.println(linea);
-                } catch (EOFException e) {
-                    break;
-                }
+                System.out.println(ventas2);
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error: El fichero no existe. ");

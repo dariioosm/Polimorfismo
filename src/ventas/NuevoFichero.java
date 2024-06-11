@@ -1,8 +1,10 @@
 package ventas;
 
-public class NuevoFichero extends Venta {
+public class NuevoFichero {
 
 private String fechaHora;
+
+private double ingreso;
 
 
 public String getFechaHora() {
@@ -13,23 +15,17 @@ public void setFechaHora(String fechaHora) {
     this.fechaHora = fechaHora;
 }
 
+public double getIngreso() {
+    return ingreso;
+}
 
+public void setIngreso(double ingreso) {
+    this.ingreso = ingreso;
+}
 
+public NuevoFichero(String fechaHora, double ingreso) {
+    this.fechaHora = fechaHora;
+    this.ingreso = ingreso;
+}
 
-
-
-
-    @Override
-    public double calcularIngresoVenta() {
-
-        int[] precio = { 350, 250, 100, 60 };
-        String[] tipo = { "SP", "GP", "GA", "EG" };
-        double ingreso = 0;
-        for (int i = 0; i < tipo.length; i++) {
-            if (getTipoEntrada().equalsIgnoreCase(tipo[i])) {
-                ingreso = getNumeroEntradas() * precio[i];
-            }
-        }
-        return ingreso;
-    }
 }

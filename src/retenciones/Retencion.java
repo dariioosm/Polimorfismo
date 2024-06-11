@@ -6,7 +6,6 @@ public class Retencion {
         String[] titulos = { "COD_TRABAJADOR", "SALARIO_BASE", "COMPLEMENTOS", "GASTOS" };
         String[] codigos = { "1AAA", "2BBB", "6CCC", "12RR", "32HH" };
         int[] suma = { 0, 0, 0, 0, 0 };
-        double[] fin = { 0, 0, 0, 0, 0 };
         int[][] numeros = {
                 { 2000, 700, 40 },
                 { 1000, 200, 30 },
@@ -16,7 +15,7 @@ public class Retencion {
         };
         ret.imprimeMatriz(titulos, codigos, numeros);
         ret.retencion(codigos, numeros, suma);
-        ret.imprimeRet(codigos, suma, fin);
+        ret.imprimeRet(codigos, suma);
     }
 
     public void imprimeMatriz(String[] titulos, String[] codigos, int[][] numeros) {
@@ -42,7 +41,7 @@ public class Retencion {
         }
     }
 
-    public void imprimeRet(String[] codigos, int[] suma, double[] fin) {
+    public void imprimeRet(String[] codigos, int[] suma) {
         int[] min = { 0, 1000, 1300, 1800 };
         int[] max = { 999, 1299, 1799, 5000 };
         double[] ret = { 3, 7, 12,21 };

@@ -35,7 +35,7 @@ public class PersonalArrayList {
 				encontrado = true;
 				System.out.println("Desea borrar el articulo con el codigo " + codigo + "? (s/n)");
 				op = in.next().charAt(0);
-				if (op == 's') {
+				if (op == 's' || op == 'S') {
 					plantilla.remove(persona);
 					System.out.println("Personal eliminado correctamente.");
 				}
@@ -67,9 +67,9 @@ public class PersonalArrayList {
 			System.out.println("Fichero guardado.");
 			System.out.println();
 		} catch (FileNotFoundException ex) {
-			ex.printStackTrace();
+			System.out.println("fichero no encontrado" + ex);
 		} catch (IOException ex) {
-			ex.printStackTrace();
+			System.out.println("error en entrada o salida de datos" + ex);
 		} finally {
 			try {
 				fichero.close();
@@ -88,18 +88,16 @@ public class PersonalArrayList {
 			DecimalFormat df = new DecimalFormat("#.00");
 			FicheroNuevo f = new FicheroNuevo();
 			for (FicheroNuevo li : plantilla2) {
-				System.out.println("leeyendo");
+				System.out.println("leyendo");
 				System.out.println(li.toString());
 			}
 
 		} catch (ClassNotFoundException cnfe) {
-			System.out.println("No se pudo acceder a la clase adecuada para revertirlo.");
+			System.out.println("No se pudo acceder a la clase adecuada para revertirlo." + cnfe);
 		} catch (FileNotFoundException fnfe) {
-			System.out.println("Error: el fichero no existe.");
+			System.out.println("Error: el fichero no existe." + fnfe);
 		} catch (IOException ioe) {
-			System.out.println(ioe.getMessage());
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error: en entrada o salida." + ioe);
 		}
 	}
 

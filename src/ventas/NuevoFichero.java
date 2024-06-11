@@ -5,6 +5,13 @@ public class NuevoFichero extends Venta {
 private String fechaHora;
 
 
+public String getFechaHora() {
+    return fechaHora;
+}
+
+public void setFechaHora(String fechaHora) {
+    this.fechaHora = fechaHora;
+}
 
 
 
@@ -25,5 +32,4 @@ private String fechaHora;
         }
         return ingreso;
     }
-
 }

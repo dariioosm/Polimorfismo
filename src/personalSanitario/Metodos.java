@@ -1,17 +1,18 @@
 package personalSanitario;
 
-import java.util.*;
 import java.io.*;
 import java.text.DecimalFormat;
+import java.util.*;
 
 public class Metodos {
+
     ArrayList<Sanitario> lista = new ArrayList<Sanitario>();
-    ArrayList<FicheroNuevo> listaN = new ArrayList<FicheroNuevo>();
+    ArrayList<Fichero> listaN = new ArrayList<Fichero>();
 
     public void cargar() {
-        lista.add(new Hospitalario("Pérez Carlos", "RP11", 5, "A1/A", "H-Cabueñes"));
-        lista.add(new Hospitalario("Pérez Maria", "RP13", 3, "C1/C", "H-SanAgustin"));
-        lista.add(new Hospitalario("Lago Carlos", "RP17", 2, "C2/D", "H-Cabueñes"));
+        lista.add(new Hospitalario("P�rez Carlos", "RP11", 5, "A1/A", "H-Cabue�es"));
+        lista.add(new Hospitalario("P�rez Maria", "RP13", 3, "C1/C", "H-SanAgustin"));
+        lista.add(new Hospitalario("Lago Carlos", "RP17", 2, "C2/D", "H-Cabue�es"));
         lista.add(new Hospitalario("Vega Paula", "RP18", 5, "A1/A", "H-HUCA"));
 
     }
@@ -35,9 +36,9 @@ public class Metodos {
             Sanitario s = it.next();
             if (s instanceof Hospitalario) {
                 Hospitalario h = (Hospitalario) s;
-                if (hospitalN.equals(h.getHostipal())) {
+                if (hospitalN.equals(h.getHospital())) {
                     it.remove();
-                    System.out.println("Eliminado con éxito: " + h.toString());
+                    System.out.println("Eliminado con �xito: " + h.toString());
                     eliminado = true;
                 }
             }
@@ -50,12 +51,12 @@ public class Metodos {
 
     public void guardarFichero() throws FileNotFoundException, IOException, ClassNotFoundException {
         FileOutputStream fichero = null;
-        FicheroNuevo f = new FicheroNuevo();
+        Fichero f = new Fichero();
         Hospitalario h = new Hospitalario();
         for (Sanitario li : lista) {
-            listaN.add(new FicheroNuevo());
+            listaN.add(new Fichero(li.getNumeroRegistro(), li.calculoNomina()));
         }
-        for (FicheroNuevo li : listaN) {
+        for (Fichero li : listaN) {
             System.out.println(li.toString());
         }
         try {
@@ -81,11 +82,11 @@ public class Metodos {
         try {
             FileInputStream fin = new FileInputStream("Hospital.dat");
             ObjectInputStream ois = new ObjectInputStream(fin);
-            listaN = (ArrayList<FicheroNuevo>) ois.readObject();
+            listaN = (ArrayList<Fichero>) ois.readObject();
             ois.close();
             DecimalFormat df = new DecimalFormat("#.00");
-            FicheroNuevo f = new FicheroNuevo();
-            for (FicheroNuevo li : listaN) {
+            Fichero f = new Fichero();
+            for (Fichero li : listaN) {
                 System.out.println("leeyendo");
                 System.out.println(li.toString());
             }
@@ -106,8 +107,8 @@ public class Metodos {
         Hospitalario h = new Hospitalario();
         for (Sanitario ll : lista) {
             // System.out.println("CODIGO || " +ll. + " || Suma Correspondiente:
-            // "+ll.lista+"€ || Salario Final: "+ll.calculoNomina()+"€");
-            System.out.println(ll.toString() + "Salario Final: " + ll.calculoNomina() + "€");
+            // "+ll.lista+"� || Salario Final: "+ll.calculoNomina()+"�");
+            System.out.println(ll.toString() + "Salario Final: " + ll.calculoNomina() + "�");
             System.out.println();
         }
     }
